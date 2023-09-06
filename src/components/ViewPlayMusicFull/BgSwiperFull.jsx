@@ -1,13 +1,6 @@
-import { EffectFade, Navigation, Pagination, Autoplay } from "swiper";
+import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { memo } from "react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-fade";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
 
 const imgBgViewFull = [
    "https://top10tayninh.com/wp-content/uploads/2022/10/hinh-nen-phong-canh-anime-1.jpg",

@@ -1,32 +1,10 @@
 import React, { memo, useEffect, useState } from "react";
-import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 import NewReleaseitem from "../NewReleaseitem/NewReleaseitem";
 import PlayListSelector from "../Selection/PlayListSelector";
 import { useGetHomePage } from "../../asset/api/path";
+import "./styles/NewReleaseHomePage.scss";
 
-const NewReleaseStyle = styled.div`
-   .m-6 {
-      margin: unset;
-   }
-   .genre-select {
-      color: var(--white);
-      .zm-btn.active {
-         border-color: var(--purple-primary);
-         background-color: var(--purple-primary);
-         color: var(--white);
-      }
-      .zm-btn {
-         padding: 4px 24px;
-         border: 1px solid var(--border-primary);
-         border-radius: 100px;
-         font-weight: 400;
-         font-size: 12px;
-         text-transform: uppercase;
-         margin-right: 15px;
-      }
-   }
-`;
 const NewReleaseHomePage = memo(() => {
     const [selectList, setSelectList] = useState(false);
     const [datas, setData] = useState(null);
@@ -102,11 +80,11 @@ const NewReleaseHomePage = memo(() => {
       );
     };
     return (
-      <NewReleaseStyle>
+      <div>
          <PlayListSelector to="moi-phat-hanh" childrenOption = {buttonInt()} title={dataSelector?.title} all={true} className2="h-[320px]">
             {!selectList ? <SongList/> : <AlbumList/>}
          </PlayListSelector>
-      </NewReleaseStyle>
+      </div>
    );
 });
 

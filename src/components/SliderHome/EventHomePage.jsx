@@ -1,9 +1,10 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
 import React, { memo, useState } from "react";
-import styled from "styled-components";
 import PlayListSelector from "../Selection/PlayListSelector";
+import "./styles/EventHomePage.scss";
+
 const EventHomePage = memo(() => {
   const project = [
     {
@@ -74,78 +75,9 @@ const EventHomePage = memo(() => {
     },
   ];
   /*========================================================
-  # 
+  # EventHomeItem.js
   ========================================================*/
   const EventHomeItem = memo(({ item, className = "" }) => {
-    const EventStyle = styled.div`
-      .favorite_content-name {
-        white-space: nowrap;
-        font-size: 18px !important;
-        font-weight: 700 !important;
-        margin-top: 4px !important;
-        margin-bottom: 2px !important;
-      }
-      .favorite_content-list {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--white);
-        white-space: nowrap;
-      }
-      .tag {
-        display: inline-block;
-        font-size: 12px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #ff0101;
-        background-color: #fff;
-        text-transform: uppercase;
-      }
-      .avatars-item {
-        width: 15px;
-        line-height: 0;
-      }
-      .avatars-item-img {
-        border-radius: 999px;
-        overflow: hidden;
-        height: 20px;
-        width: 20px;
-        border: 2px solid var(--primary-bg);
-      }
-      .right-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 500;
-        padding: 9px 20px;
-        background-color: var(--purple-primary);
-        border-color: var(--purple-primary);
-        color: var(--white);
-        font-size: 14px;
-        text-transform: uppercase;
-        border: 1px solid var(--border-primary);
-        transition: width 0.2s linear;
-        &.is-active {
-           background-color: transparent;
-           border-color: var(--border-primary);
-           color: var(--text-primary);
-        }
-      }
-      .avatars {
-        display: flex;
-        justify-content: flex-start;
-      }
-      .left-title {
-        font-size: 14px;
-        font-weight: 500;
-        margin-bottom: 4px;
-        color: var(--text-primary);
-      }
-      .text-item {
-        font-size: 14px;
-        margin-left: 8px;
-        color: var(--text-secondary);
-      }
-    `;
     const [isActive, setActice] = useState(false);
     const { coverH, title, startTime, followers, label, subscribeText, unsubscribeText, totalFollow } = item;
     // kiểm tra thời gian
@@ -178,7 +110,7 @@ const EventHomePage = memo(() => {
       praraTitle = "quan tâm";
     };
     return (
-      <EventStyle className={`favorite_list-item ${className}`}>
+      <div className={`favorite_list-item ${className}`}>
          {/*Hiển thị hình ảnh, tiêu đề ....*/}
          <a className="main-page_list-item main_page-hover" href="# ">
             <div className="main-page_list-item_img">
@@ -215,7 +147,7 @@ const EventHomePage = memo(() => {
                </button>
             </div>
          </div>
-      </EventStyle>
+      </div>
     );
   });
   /*========================================================
@@ -226,7 +158,7 @@ const EventHomePage = memo(() => {
   // thêm các nút cho thanh sự kiện
   const responseButton = () => {
       return (
-          <div className="absolute mt-2  top-0 event-btn-arrow flex justify-center items-center gap-[10px]">
+          <div className="absolute mt-2 top-0 event-btn-arrow flex justify-center items-center gap-[10px]">
               {/** trước */}
               <button ref={navigationPrevRef} type="button" className="cursor-pointer">
                  <span className="material-icons-outlined">

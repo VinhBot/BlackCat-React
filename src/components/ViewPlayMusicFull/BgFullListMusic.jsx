@@ -1,7 +1,7 @@
 import React, { memo, useRef } from "react"
 import { useSelector } from "react-redux"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination, Lazy } from "swiper"
+import { Navigation, Pagination } from "swiper/modules"
 import ItemSong from "./itemSong"
 import { useLayoutEffect } from "react"
 
@@ -41,7 +41,7 @@ const BgFullListMusic = memo(({ isScroll }) => {
 
          <Swiper
             ref={swiperERFf}
-            modules={[Navigation, Pagination, Lazy]}
+            modules={[Navigation, Pagination]}
             lazy={true}
             slidesPerView={5}
             spaceBetween={5}

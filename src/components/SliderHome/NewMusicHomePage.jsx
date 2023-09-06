@@ -1,4 +1,4 @@
-import { Navigation, Autoplay, Pagination } from "swiper";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import React, { memo, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";

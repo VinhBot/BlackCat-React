@@ -130,7 +130,7 @@ const ItemThemes = () => {
             <span className="setting_item-title">Chủ đề</span>
          </div>
 
-         <AnimatePresence initial={false} exitBeforeEnter={true} onExitComplete={() => null}>
+         <AnimatePresence initial={false} mode='wait' onExitComplete={() => null}>
             {modalOpen && <ThemePortal modalOpen={modalOpen} handleClose={close}></ThemePortal>}
          </AnimatePresence>
       </>

@@ -16,7 +16,8 @@ const queryClient = new QueryClient({
    },
 });
 
-ReactDOM.createRoot(document.getElementById("blackcat_root")).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
    <Provider store={store}>
       <QueryClientProvider client={queryClient}>
          <BrowserRouter>

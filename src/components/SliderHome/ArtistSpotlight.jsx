@@ -1,4 +1,4 @@
-import { Navigation, Autoplay, Pagination, Lazy } from "swiper";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import React, { memo, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useNavigate } from "react-router";
@@ -35,13 +35,13 @@ const ArtistSpotlight = memo(() => {
             <div className="choice_list">
                {datas && datas.length > 0 && (
                   <Swiper
-                     modules={[Navigation, Autoplay, Pagination, Lazy]}
+                     modules={[Navigation, Autoplay, Pagination]}
                      autoplay={{
                         delay: 4000,
                         disableOnInteraction: false,
                      }}
-                     lazy={true}
-                     loopFillGroupWithBlank={true}
+                     lazy="true"
+                     loopfillgroupwithblank="true"
                      loop={true}
                      spaceBetween={2}
                      slidesPerView={7}

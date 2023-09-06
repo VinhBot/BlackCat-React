@@ -1,4 +1,4 @@
-import React, { memo, useMemo, useEffect, useLayoutEffect } from "react";
+import React, { memo, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import { auth, onAuthStateChanged } from "./asset/firebase/firebase-config";
@@ -60,7 +60,7 @@ const App = memo(() => {
       // eslint-disable-next-line
    }, []);
    /*========================================================*/
-   useMemo(() => {
+   useLayoutEffect(() => {
       document.documentElement.setAttribute("data-theme", theme.dataTheme);
       if(theme.bgImg) {
          document.documentElement.classList.add("theme-bg-image");
@@ -83,7 +83,7 @@ const App = memo(() => {
      // eslint-disable-next-line
    }, []);
    /*============ set localStorage =========================*/
-   useMemo(() => {
+   useLayoutEffect(() => {
       if(!JSON.parse(localStorage.getItem("queue_nowplay"))) {
          localStorage.setItem("queue_nowplay", JSON.stringify(queueNowPlaySelector));
       };
@@ -101,18 +101,9 @@ const App = memo(() => {
       };
      // eslint-disable-next-line
    }, []);
-   /*============ Tải trang khi được truy cập ==============*/
-   useEffect(() => {
-      window.addEventListener("load", () => {
-         document.querySelector(".preloader")?.remove();
-      });
-   }, []);
    /*========================================================*/
    return (
-      <>
-         <div className="preloader">
-            <div className="loaders"></div>
-         </div>         
+      <>         
          <div className={`main ${queueNowPlaySelector.currentEncodeId ? "" : "hide-bottom"}`} style={theme.bgImg ? { backgroundImage: `url('${theme.bgImg}')` } : {}}>
             <Header/>
             <Siderleft/>

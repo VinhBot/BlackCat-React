@@ -11,7 +11,6 @@ const VideoPlayItemsStyles = styled.div`
       line-height: 1.3;
       white-space: normal;
    }
-
    .video-player-item:hover {
       background-color: hsla(0, 0%, 100%, 0.1);
    }
@@ -24,13 +23,7 @@ const VideoPlayItems = memo(({ classGird, data }) => {
       <VideoPlayItemsStyles className={`${classGird} video-playing-item  w-full `}>
          <div className="w-full flex items-center video-player-item py-[15px] px-[15px]">
             <div className="media-left">
-               <Link
-                  onClick={() => {
-                     dispatch(setInfoCurrentMv(data))
-                  }}
-                  to={`/video-clip/${data.encodeId}`}
-                  className={`want_list-item-link cursor-pointer main-page_list-item main_page-hover`}
-               >
+               <Link onClick={() => dispatch(setInfoCurrentMv(data))} to={`/video-clip/${data.encodeId}`} className={`want_list-item-link cursor-pointer main-page_list-item main_page-hover`}>
                   <div className="want_list-item-link main-page_list-item_img w-[120px] ">
                      <LazyLoadImage src={data.thumbnailM} alt={""} />
                   </div>
@@ -46,34 +39,27 @@ const VideoPlayItems = memo(({ classGird, data }) => {
             </div>
             <div className="media-right ml-[10px]">
                <div className="title">
-                  <Link
-                     onClick={() => {
-                        dispatch(setInfoCurrentMv(data))
-                     }}
-                     to={`/video-clip/${data.encodeId}`}
-                  >
+                  <Link onClick={() => dispatch(setInfoCurrentMv(data))} to={`/video-clip/${data.encodeId}`}>
                      {data.title}
                   </Link>
                </div>
                <div className="subtitle ">
                   {data.artists.map((e, index) => {
                      if (index > 2) return;
-
-                     let prara = ", "
-
+                     let prara = ", ";
                      if (index === 2) {
-                        prara = "..."
-                     }
+                        prara = "...";
+                     };
 
                      if (data.artists.length === 1) {
-                        prara = ""
-                     }
+                        prara = "";
+                     };
                      if (data.artists.length === 2 && index === 1) {
-                        prara = ""
-                     }
+                        prara = "";
+                     };
                      if (data.artists.length === 3 && index === 2) {
-                        prara = ""
-                     }
+                        prara = "";
+                     };
                      return (
                         <span key={index}>
                            <Link className="is-ghost title-hover" to={`/nghe-si/${e.alias}/`}>
@@ -87,7 +73,7 @@ const VideoPlayItems = memo(({ classGird, data }) => {
             </div>
          </div>
       </VideoPlayItemsStyles>
-   )
-})
+   );
+});
 
 export default VideoPlayItems
