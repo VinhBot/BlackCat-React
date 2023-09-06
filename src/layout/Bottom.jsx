@@ -13,18 +13,15 @@ import {
   setNextSongShuffle, 
   fetchPlayList 
 } from "../features/QueueFeatures/QueueFeatures";
-import { 
-  ViewPlayMusicMain,
-  ItemRighPlayer,
-  BottomControlsRight,
-  BottomControlsCenter,
-  BottomControlLeft, 
-  CloclAlarm, RemoveList, 
-} from "../components/main"
-import {
-  setPlay,
-  setReady
-} from "../features/SettingPlay/settingPlay";
+import { setPlay, setReady } from "../features/SettingPlay/settingPlay";
+
+import ViewPlayMusicMain from "../components/ViewPlayMusicFull/ViewPlayMusicMain.jsx";
+import BottomControlsCenter from "../components/Bottom/BottomControlsCenter.jsx";
+import BottomControlsRight from "../components/Bottom/BottomControlsRight.jsx";
+import BottomControlLeft from "../components/Bottom/BottomControlLeft.jsx";
+import ItemRighPlayer from "../components/Item/ItemRighPlayeQueue.jsx";
+import RemoveList from "../components/ClockAndRemove/RemoveList.jsx";
+import CloclAlarm from "../components/ClockAndRemove/CloclAlarm.jsx";
 /*========================================================*/
 const BottomPlayer = memo(() => {
    return (
@@ -191,4 +188,4 @@ const BottomPlay = memo(() => {
    );
 });
 
-export { BottomPlay };
+export default BottomPlay;

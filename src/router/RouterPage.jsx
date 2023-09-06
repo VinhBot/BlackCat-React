@@ -2,6 +2,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import React, { memo, useEffect, useRef } from "react";
 // Components
 import Loading from "../components/loading/Loading";
+// 
 const MyInfoPage = React.lazy(() => import('../components/MyMusicPage/MyInfoPage'));
 const HistorySong = React.lazy(() => import('../components/HistoryPage/HistorySong'));
 const HistoryVideo = React.lazy(() => import('../components/HistoryPage/HistoryVideo'));
@@ -113,9 +114,9 @@ const RouterPage = memo(() => {
                <Route path="/profile" element={<Profile/>}/>
                {/* Hiển thị nếu không thể tìm thấy trang yêu cầu */}
                <Route path="*" element={<NotFound/>}/>
-              </Route>
-            </Routes>
-         </div>
+            </Route>
+          </Routes>
+        </div>
       </div>
    );
 });

@@ -5,8 +5,8 @@ import { auth, onAuthStateChanged } from "./asset/firebase/firebase-config";
 import { setPlaying } from "./features/SettingPlay/settingPlay";
 import { setUser } from "./features/User/userFeatures";
 import { Siderleft, Header } from "./layout/Header";
-import { BottomPlay } from "./layout/Bottom";
 import RouterPage from "./router/RouterPage";
+import BottomPlay from "./layout/Bottom";
 /*===========================================================*/
 const App = memo(() => {
    const queueNowPlaySelector = useSelector((state) => state.queueNowPlay);
