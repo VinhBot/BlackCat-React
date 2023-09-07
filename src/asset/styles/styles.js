@@ -1,6 +1,7 @@
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "tippy.js/animations/perspective-extreme.css";
 import "react-toastify/dist/ReactToastify.css";
+import "tippy.js/dist/tippy.css"; // optional
 // Import styles file
 import "./index.scss";
 import "./grid.css";

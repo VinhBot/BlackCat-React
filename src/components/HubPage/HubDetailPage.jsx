@@ -1,50 +1,17 @@
-import React, { useState } from "react"
-import { useParams } from "react-router"
-import styled from "styled-components"
-import { v4 as uuidv4 } from "uuid"
-import { LoadingSvg } from "../loading/LoadingSvg"
-import PlayListSelector from "../Selection/PlayListSelector"
-import CarouselItem from "../Selection/CarouselItem"
-import NewReleaseitem from "../NewReleaseitem/NewReleaseitem"
-import MvItem from "../MVpage/MvItem"
-import ItemArits from "../MyMusicPage/ItemArits"
-import { useCallback } from "react"
+import React, { useState, useCallback, useLayoutEffect } from "react";
+import { useParams } from "react-router";
+import { v4 as uuidv4 } from "uuid";
+import { LoadingSvg } from "../loading/LoadingSvg";
+import PlayListSelector from "../Selection/PlayListSelector";
+import CarouselItem from "../Selection/CarouselItem";
+import NewReleaseitem from "../NewReleaseitem/NewReleaseitem";
+import MvItem from "../MVpage/MvItem";
+import ItemArits from "../MyMusicPage/ItemArits";
 import axios from "axios"
-import { tmdAPI } from "../../asset/api/path"
-import { useLayoutEffect } from "react"
+import { tmdAPI } from "../../asset/api/path";
 
-const HubDetailPageStyles = styled.div`
-   .cover {
-      position: relative;
-      margin: 0 calc(var(--padding-section) * -1);
-      text-align: center;
-      padding-bottom: 30%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 0;
-      background-color: var(--loading-bg);
-   }
-   .blur {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-      filter: unset;
-      &:before {
-         content: "";
-         clear: both;
-         position: absolute;
-         width: 100%;
-         height: 50%;
-         bottom: 0;
-         left: 0;
-         background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), var(--layout-bg));
-      }
-   }
-`
+import { HubDetailPageStyles } from "../../asset/styles/styledComponents";
+
 
 const HubDetailPage = () => {
    const { id } = useParams()

@@ -6,7 +6,10 @@ import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures";
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
 import { useLikeHook } from "../../layout/Hook";
-import "./ArtistInfoTop.scss";
+import {
+   PortalStyless as PortalStyle ,
+   InfoTopStyles
+} from "../../asset/styles/styledComponents";
 
 const ArtistInfoTop = memo(({ data }) => {
    const dispatch = useDispatch();
@@ -22,7 +25,7 @@ const ArtistInfoTop = memo(({ data }) => {
    };
 
    return (
-      <div className="artist_page-title row !flex-wrap mb-[40px]">
+      <InfoTopStyles className="artist_page-title row !flex-wrap mb-[40px]">
          <div className="col l-7 m-7 c-12 artist_page-title-deital">
             <div className="artist_page-title-left artist_page-title-deital">
                <h3 className="artist-name title">{data?.name}</h3>
@@ -30,14 +33,14 @@ const ArtistInfoTop = memo(({ data }) => {
                   {data?.sortBiography.length > 0 && data && (
                      <>
                         <span className="content-detail" dangerouslySetInnerHTML={{ __html: data?.sortBiography }}></span>
-                        <span onClick={() => show()} className="read-more ml-2" >
+                        <span onClick={() => show()} className="read-more ml-2">
                            ...Xem Thêm
                         </span>
                      </>
                   )}
 
                   <Portal>
-                     <div className="portal-theme-modal">
+                     <PortalStyle>
                         <div className="zm-portal-modal theme-modal-overlay" id="theme-overlay" onClick={handleClickBackdrop}>
                            <div className="modal p-1 theme-modal  text-white">
                               <div className=" max-w-[480px] relative">
@@ -65,7 +68,7 @@ const ArtistInfoTop = memo(({ data }) => {
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </PortalStyle>
                   </Portal>
                </div>
                <div className="actions mt-[20px] mb-[15px] inline-flex gap-[10px] items-center justify-start">
@@ -113,7 +116,7 @@ const ArtistInfoTop = memo(({ data }) => {
                </figure>
             </div>
          </div>
-      </div>
+      </InfoTopStyles>
    );
 });
 

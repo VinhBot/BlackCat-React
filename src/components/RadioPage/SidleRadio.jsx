@@ -3,93 +3,11 @@ import PlayListSelector from "../Selection/PlayListSelector"
 import { Navigation, Pagination } from "swiper/modules"
 import { v4 as uuidv4 } from "uuid"
 import { Swiper, SwiperSlide } from "swiper/react"
-import styled from "styled-components"
-
-const ItemStyles = styled.div`
-   margin-right: 12px;
-   margin-left: 12px;
-   padding: 16px;
-   border-radius: 12px;
-   position: relative;
-   overflow: hidden;
-   align-items: center;
-   display: flex;
-   text-align: left;
-   align-items: center;
-   display: flex;
-   text-align: left;
-   .cover {
-      z-index: -1;
-      -webkit-filter: blur(50px);
-      filter: blur(50px);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-   }
-   .opac {
-      background-color: rgba(0, 0, 0, 0.2);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-   }
-   .media-content {
-      position: relative;
-      color: var(--white);
-      flex-basis: auto;
-      flex-grow: 1;
-      flex-shrink: 1;
-      text-align: left;
-      align-self: center;
-      width: 0;
-   }
-   .host {
-      font-size: 12px;
-      font-weight: 500;
-      color: rgba(254, 255, 255, 0.8);
-      margin-bottom: 2px;
-   }
-   .image {
-      height: 120px;
-      width: 120px;
-      border-radius: 6px;
-      overflow: hidden;
-   }
-   .media-left {
-      margin-right: 20px;
-      position: relative;
-   }
-   .subtitle {
-      margin-top: 4px;
-      font-size: 14px;
-      color: rgba(254, 255, 255, 0.8);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      white-space: normal;
-      overflow: hidden;
-   }
-   .title {
-      color: var(--white);
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 0;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      max-width: 100%;
-      line-height: normal;
-      display: inline-block;
-   }
-`
+import { ItemStyles } from "../../asset/styles/styledComponents";
 
 const SidleRadio = ({ data, isFeatured }) => {
    const navigationPrevRef = useRef(null)
    const navigationNextRef = useRef(null)
-
    return (
       <PlayListSelector
          title={data?.title}
@@ -137,9 +55,7 @@ const SidleRadio = ({ data, isFeatured }) => {
                   },
                }}
             >
-               {data?.items &&
-                  data.items.length > 0 &&
-                  data?.items?.map((e, index) => {
+               {data?.items && data.items.length > 0 && data?.items?.map((e, index) => {
                      return (
                         <SwiperSlide key={uuidv4()}>
                            {!isFeatured ? (

@@ -1,59 +1,12 @@
-import Tippy from "@tippyjs/react"
-import React, { memo } from "react"
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import styled from "styled-components"
-import { removeList } from "../../features/QueueFeatures/QueueFeatures"
-import { setPlay } from "../../features/SettingPlay/settingPlay"
 
-const LoginPortalStyyles = styled.div`
-   background-color: var(--primary-bg);
-   border-radius: 8px;
-   box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
-   width: 240px;
-   z-index: 101;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   .menu-list {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      li.is-active,
-      li:hover {
-         background-color: var(--alpha-bg);
-         color: var(--text-item-hover);
-      }
-      li {
-         width: 100%;
-      }
+import React, { memo, useState } from "react";
+import { useDispatch } from "react-redux";
+import Tippy from "@tippyjs/react";
 
-      li button {
-         font-size: 14px;
-         color: var(--navigation-text);
-         display: flex;
-         justify-content: start;
-         align-items: center;
-         padding: 12px 20px;
-         i {
-            margin-right: 10px;
-            font-size: 20px;
-         }
-      }
-      li a {
-         color: var(--text-secondary);
-      }
-   }
+import { removeList } from "../../features/QueueFeatures/QueueFeatures";
+import { setPlay } from "../../features/SettingPlay/settingPlay";
+import { _LoginPortalStyyles as LoginPortalStyyles } from "../../asset/styles/styledComponents";
 
-   .tippy-box {
-      background-color: transparent;
-      border: none;
-
-      .tippy-content {
-         padding: 0;
-      }
-   }
-`
 
 const LoginPortal = ({ setOpen }) => {
    const dispatch = useDispatch();
@@ -90,4 +43,4 @@ const RemoveList = memo(() => {
    )
 });
 
-export default RemoveList
+export default RemoveList;

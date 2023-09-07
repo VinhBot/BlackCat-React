@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import NewReleaseitem from "../NewReleaseitem/NewReleaseitem";
 import PlayListSelector from "../Selection/PlayListSelector";
 import { useGetHomePage } from "../../asset/api/path";
-import "./styles/NewReleaseHomePage.scss";
+import { NewReleaseStyle } from "../../asset/styles/styledComponents";
 
 const NewReleaseHomePage = memo(() => {
     const [selectList, setSelectList] = useState(false);
@@ -80,11 +80,11 @@ const NewReleaseHomePage = memo(() => {
       );
     };
     return (
-      <div>
+      <NewReleaseStyle>
          <PlayListSelector to="moi-phat-hanh" childrenOption = {buttonInt()} title={dataSelector?.title} all={true} className2="h-[320px]">
             {!selectList ? <SongList/> : <AlbumList/>}
          </PlayListSelector>
-      </div>
+      </NewReleaseStyle>
    );
 });
 

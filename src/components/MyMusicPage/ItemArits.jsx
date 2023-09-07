@@ -1,93 +1,11 @@
 import React, { memo } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-import styled from "styled-components"
 import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
 import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
 import { useLikeHook } from "../../layout/Hook"
+import { ItemAritsStyles } from "../../asset/styles/styledComponents"
 
-const ItemAritsStyles = styled.div`
-   .main-page_list-item_img {
-      img {
-         border-radius: 999rem;
-         border: 2px solid #333;
-      }
-   }
-
-   .is-mvpage.zm-btn {
-      height: 38px;
-      width: 38px;
-      background: #fff;
-      color: #000;
-      position: absolute;
-      top: 85.3%;
-      left: 85.3%;
-      transform: translate(-60%, -60%);
-      box-shadow: 0 1.22656px 4.90625px rgb(0 0 0 / 16%);
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      &:hover {
-         -webkit-filter: brightness(0.9);
-         filter: brightness(0.9);
-      }
-   }
-   .title {
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.36;
-      color: var(--text-primary);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: capitalize;
-      display: block;
-      &:hover {
-         text-decoration: underline;
-      }
-   }
-
-   .subtitle {
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 1.33;
-      color: var(--text-secondary);
-   }
-   .item-mvArits-footer {
-      .play-btn {
-         background-color: transparent;
-         font-size: 12px;
-         padding: 4px 14px;
-      }
-   }
-   .mvpage-link-arlit {
-      border: 1px solid var(--border-primary);
-      border-radius: 50%;
-      position: relative;
-      i {
-         width: 40px;
-         height: 40px;
-         margin-right: 0;
-         position: absolute;
-         top: 52%;
-         left: 50%;
-         font-size: 40px;
-         transform: translate(-50%, -50%);
-      }
-   }
-
-   .item-myArits-last:hover {
-      i,
-      a {
-         color: var(--link-text-hover);
-      }
-   }
-   .play-btn:hover {
-      border-color: var(--link-text-hover);
-      color: var(--link-text-hover);
-      transition: 0.1s;
-   }
-`
 
 const ItemArits = memo(({ classGird, data, noneFooter, isLinkToAll }) => {
    const navigate = useNavigate()

@@ -1,20 +1,10 @@
-import React, { memo } from "react"
-import { LazyLoadImage } from "react-lazy-load-image-component"
-import { useDispatch } from "react-redux"
-import { Link } from "react-router-dom"
-import styled from "styled-components"
-import { setInfoCurrentMv } from "../../features/QueueFeatures/QueueFeatures"
+import React, { memo } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { setInfoCurrentMv } from "../../features/QueueFeatures/QueueFeatures";
+import { VideoPlayItemsStyles } from "../../asset/styles/styledComponents";
 
-const VideoPlayItemsStyles = styled.div`
-   .title {
-      font-weight: 700;
-      line-height: 1.3;
-      white-space: normal;
-   }
-   .video-player-item:hover {
-      background-color: hsla(0, 0%, 100%, 0.1);
-   }
-`
 
 const VideoPlayItems = memo(({ classGird, data }) => {
    const dispatch = useDispatch();

@@ -1,6 +1,7 @@
-import React from "react"
-import { useSelector } from "react-redux"
-import ItemChartList from "../TopChartPage/ItemChartList"
+import { useSelector } from "react-redux";
+import React from "react";
+
+import ItemChartList from "../TopChartPage/ItemChartList";
 
 const HistorySong = () => {
    const recentSongs = useSelector((state) => state.logged.recentSongs);

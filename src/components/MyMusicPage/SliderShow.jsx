@@ -34,9 +34,7 @@ const SliderShow = memo(({ data }) => {
    return (
       <div className="container__slide">
          <div className="container__slide-show">
-            {datas &&
-               datas.length > 0 &&
-               datas.map((e, index) => {
+            {datas && datas.length > 0 && datas.map((e, index) => {
                   let classGird = "fourth"
                   if (index === 0) {
                      classGird = "first"
@@ -50,12 +48,7 @@ const SliderShow = memo(({ data }) => {
 
                   return (
                      <div key={e.encodeId} className={`container__slide-item ${classGird}`}>
-                        <div
-                           style={{
-                              background: `url('${e.thumbnailM || e.thumbnail}') no-repeat center center / cover`,
-                           }}
-                           className="container__slide-img"
-                        />
+                        <div style={{ background: `url('${e.thumbnailM || e.thumbnail}') no-repeat center center / cover`, }} className="container__slide-img" />
                      </div>
                   )
                })}

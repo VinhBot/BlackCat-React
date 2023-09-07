@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import React, { memo } from "react";
 import { LoadingSkeleton } from "../loading/LoadingSvg"
 import { useDispatch, useSelector } from "react-redux"
@@ -9,53 +8,7 @@ import ActionIcon from "../Icon/ActionIcon"
 import { setPlay } from "../../features/SettingPlay/settingPlay"
 import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
 import { useLikeHook } from "../../layout/Hook"
-
-const StyleDiv = styled.div`
-   &.active {
-      .recently_list-item_hover {
-         transition: 0.2s !important;
-         display: flex !important;
-      }
-      .recently_btn-hover-play .icon {
-         width: 34px;
-         height: 34px;
-      }
-   }
-
-   @media (max-width: 719px) {
-      &.active {
-         .player_btn {
-            display: none !important;
-         }
-      }
-   }
-
-   .player_btn.like {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 999px;
-      line-height: normal;
-      border: 0;
-      display: inline-block;
-      font-weight: 400;
-      text-align: center;
-      cursor: pointer;
-      margin: 0 2px;
-      border: none;
-      color: var(--player-text);
-      padding: 6px;
-      i {
-         font-size: 16px;
-         padding: 5px;
-         border-radius: 50%;
-         margin-right: 0;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-      }
-   }
-`;
+import { StyleDiv } from "../../asset/styles/styledComponents";
 
 const CarouselItem = memo(({ hiddenTitle, isHiddenButton = false, isSwiper = false, class1 = "", class2 = "", artis = false, desc = false, item = {}}) => {
       const { title, encodeId, artists, sortDescription, thumbnailM } = item;

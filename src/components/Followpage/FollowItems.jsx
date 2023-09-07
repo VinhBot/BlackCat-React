@@ -1,63 +1,11 @@
 import React, { memo, useState } from "react";
 import usePortal from "react-cool-portal";
-import styled from "styled-components";
 import { formartTimeNewFeed } from "../../asset/data/functions";
 import PortalMVpage from "../Portal/PortalMVpage";
-
-const ItemStyles = styled.div`
-   border-radius: 8px;
-   padding: 20px;
-   box-shadow: 0 2px 10px 0 var(--main-box-shadow);
-   background-color: var(--box-item-bg);
-   position: relative;
-   .subtitle {
-      font-size: 12px;
-      font-weight: 300;
-      margin-top: 3px;
-      white-space: nowrap;
-      color: var(--text-secondary);
-      &:hover {
-         color: var(--link-text-hover);
-      }
-   }
-
-   .recently_list-item_hover {
-      background-color: rgba(0, 0, 0, 0.2);
-   }
-   .name {
-      &:hover {
-         color: var(--link-text-hover);
-      }
-   }
-
-   .btn-care {
-      color: var(--link-text-hover);
-      &:hover {
-         filter: brightness(0.9);
-      }
-
-      &.is-care {
-         color: var(--text-placeholder);
-      }
-   }
-   .title {
-      display: -webkit-box;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 5;
-      height: auto;
-      overflow: hidden;
-   }
-   .recently_list-item_hover {
-      display: flex !important;
-   }
-   .main_page-hover:hover img {
-      transform: scale(1) !important;
-   }
-`
+import { _ItemStyles as ItemStyles } from "../../asset/styles/styledComponents";
 
 const FollowItems = memo(({ data }) => {
-   const { like, publisher, shortDescription, createdTime, title, content, commend } = data;
+   const { like, publisher, createdTime, title, content, commend } = data;
    const { Portal, show, hide } = usePortal({ defaultShow: false });
    const [llike, setLike] = useState(false);
    const [care, setCare] = useState(false);
@@ -127,7 +75,7 @@ const FollowItems = memo(({ data }) => {
             <PortalMVpage Portal={Portal} hide={hide} data={data}/>
          </ItemStyles>
       </div>
-   )
-})
+   );
+});
 
 export default FollowItems

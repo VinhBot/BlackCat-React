@@ -18,8 +18,7 @@ const PodcastRadio = ({ data }) => {
 
    return (
       <PlayListSelector isTitleSub={SubTitle(data?.subTitle)} title={data?.title}>
-         {data?.items?.length > 0 &&
-            data?.items.map((e, index) => {
+         {data?.items?.length > 0 && data?.items.map((e, index) => {
                if (index > 4) return
                let classGird = "col l-2-4 m-3 c-5"
                if (index === 4) {
@@ -38,10 +37,7 @@ const PodcastRadio = ({ data }) => {
                   ></CarouselItem>
                )
             })}
-         {!data &&
-            Array(5)
-               .fill(0)
-               .map((e, index) => {
+         {!data && Array(5).fill(0).map((e, index) => {
                   let classGird = "col l-2-4 m-3 c-5"
                   if (index === 4) {
                      classGird = "col l-2-4 m-0 c-5"

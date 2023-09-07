@@ -1,11 +1,11 @@
-import React, { memo } from "react"
-import ActionIcon from "../Icon/ActionIcon"
-import ActionPlay from "../Icon/ActionPlay"
-import LoadingIcon from "../Icon/LoadingIcon"
-import { LazyLoadImage } from "react-lazy-load-image-component"
-import { useSelector, useDispatch } from "react-redux"
-import { Link } from "react-router-dom"
-import { Draggable } from "react-beautiful-dnd"
+import React, { memo } from "react";
+import ActionIcon from "../Icon/ActionIcon";
+import ActionPlay from "../Icon/ActionPlay";
+import LoadingIcon from "../Icon/LoadingIcon";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { Draggable } from "react-beautiful-dnd";
 
 import {
    pushSongHistoryPlayList,

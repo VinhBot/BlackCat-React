@@ -9,7 +9,7 @@ import scrollIntoView from "smooth-scroll-into-view-if-needed";
 import {
   AlbumPageInfo, PlayListSelector, CarouselItem, 
   ItemArits, ItemChartList, LoadingSvg,
-} from "../components/main";
+} from "../components/main";  
 
 import "./styles/AlbumPage.scss";
 

@@ -1,57 +1,13 @@
 import { useLocation, useNavigate } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import React, { useState } from "react";
-import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 import { auth, signOut } from "../../asset/firebase/firebase-config";
 import { toast } from "react-toastify";
 import { logOut } from "../../features/User/userFeatures";
+import { LoginPortalStyyles } from "../../asset/styles/styledComponents";
 
 const LoginPortal = ({ setOpen }) => {
-   const LoginPortalStyyles = styled.div`
-     background-color: var(--primary-bg);
-     border-radius: 8px;
-     box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
-     width: 240px;
-     z-index: 101;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     .menu-list {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        li.is-active, li:hover {
-           background-color: var(--alpha-bg);
-           color: var(--text-item-hover);
-        }
-        li {
-           width: 100%;
-        }
-        li button {
-           font-size: 14px;
-           color: var(--navigation-text);
-           display: flex;
-           justify-content: start;
-           align-items: center;
-           padding: 12px 20px;
-           i {
-              margin-right: 10px;
-              font-size: 20px;
-           }
-        }
-        li a {
-           color: var(--text-secondary);
-        }
-     }
-     .tippy-box {
-        background-color: transparent;
-        border: none;
-        .tippy-content {
-           padding: 0;
-        }
-     }
-   `;
    const navigate = useNavigate();
    const dispatch = useDispatch();
    const { pathname } = useLocation();

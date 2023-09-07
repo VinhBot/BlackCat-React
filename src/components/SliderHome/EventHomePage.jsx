@@ -3,7 +3,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { memo, useState } from "react";
 import PlayListSelector from "../Selection/PlayListSelector";
-import "./styles/EventHomePage.scss";
+import { EventStyle } from "../../asset/styles/styledComponents";
 
 const EventHomePage = memo(() => {
   const project = [
@@ -110,7 +110,7 @@ const EventHomePage = memo(() => {
       praraTitle = "quan tâm";
     };
     return (
-      <div className={`favorite_list-item ${className}`}>
+      <EventStyle  className={`favorite_list-item ${className}`}>
          {/*Hiển thị hình ảnh, tiêu đề ....*/}
          <a className="main-page_list-item main_page-hover" href="# ">
             <div className="main-page_list-item_img">
@@ -147,7 +147,7 @@ const EventHomePage = memo(() => {
                </button>
             </div>
          </div>
-      </div>
+      </EventStyle >
     );
   });
   /*========================================================

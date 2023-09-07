@@ -1,10 +1,10 @@
-import React, { memo } from "react"
-import PlayListSelector from "../Selection/PlayListSelector"
-import { LoadingSvg } from "../loading/LoadingSvg"
-import ItemArits from "./ItemArits"
+import { useOutletContext } from "react-router";
+import React, { memo } from "react";
+import PlayListSelector from "../Selection/PlayListSelector";
+import { LoadingSvg } from "../loading/LoadingSvg";
+import ItemArits from "./ItemArits";
+import EmptyContent from "../Bottom/EmptyContent";
 
-import { useOutletContext } from "react-router"
-import EmptyContent from "../Bottom/EmptyContent"
 const MyMusicArtis = memo(() => {
    const { docs } = useOutletContext()
 
@@ -18,7 +18,6 @@ const MyMusicArtis = memo(() => {
             <PlayListSelector all={false} classAdd={"container_radio "} classAdd2={"mb-[10px]"} title={"Nghệ Sĩ"}>
                {docs.favouriteArtist.map((e, index) => {
                   let classGird = "col l-2-4 m-3 c-5 !mb-[30px]"
-
                   return <ItemArits classGird={classGird} key={e.id} data={e}></ItemArits>
                })}
             </PlayListSelector>
@@ -27,4 +26,4 @@ const MyMusicArtis = memo(() => {
    )
 })
 
-export default MyMusicArtis
+export default MyMusicArtis;

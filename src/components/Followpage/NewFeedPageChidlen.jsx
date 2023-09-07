@@ -48,7 +48,7 @@ const NewFeedPageChidlen = () => {
          return setLoading(false)
       };
       if (datas.length === 0) {
-         setData(dataSelector)
+         setData(dataSelector);
       } else {
          setData((value) => [...value, ...dataSelector])
       };
@@ -56,6 +56,7 @@ const NewFeedPageChidlen = () => {
          setLoading(true);
       }, 3000);
    };
+
    const pageEnd = useRef();
    if (datas.length === 0) return <LoadingSvg/>
    return (

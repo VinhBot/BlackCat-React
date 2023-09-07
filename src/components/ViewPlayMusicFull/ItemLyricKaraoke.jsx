@@ -1,29 +1,6 @@
-import React, { memo, useRef } from "react"
-import { useEffect } from "react"
-import { useSelector } from "react-redux"
-import styled from "styled-components"
-
-const LyricStyleds = styled.li`
-   & > span {
-      display: inline-block;
-      text-align: center;
-      margin: 20px 0;
-      letter-spacing: 1.2px;
-      font-weight: 700;
-      line-height: 1.2;
-      position: relative;
-      white-space: nowrap;
-      overflow: hidden;
-      .kara-text-highlight {
-         width: 0;
-         position: absolute;
-         top: 0;
-         left: 0;
-         color: #ffed00;
-         overflow: hidden;
-      }
-   }
-`
+import React, { memo, useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { LyricStyled as LyricStyleds } from "../../asset/styles/styledComponents";
 
 const ItemLyricKaraoke = memo(({ data }) => {
    const current = useSelector((state) => state.queueNowPlay.currentTime)

@@ -6,7 +6,7 @@ import MyMusicPlayList from "./MyMusicPage/MyMusicPlayList";
 import MyMusicArtis from "./MyMusicPage/MyMusicArtis";
 import ArtistALl from "./ArtistPage/ArtistALl";
 import ArtistSong from "./ArtistPage/ArtistSong";
-import ArtistAlbum from "./ArtistPage/ArtistAlbum";
+import ArtistAlbum from "./ArtistPage/ArtistAlbum"; 
 import ArtistMv from "./ArtistPage/ArtistMv";
 import ArtistSingle from "./ArtistPage/ArtistSingle";
 import HubDetailPage from "./HubPage/HubDetailPage";

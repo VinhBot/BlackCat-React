@@ -1,55 +1,10 @@
 import React, { memo, useLayoutEffect, useRef, useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import { useSelector, useDispatch } from "react-redux"
-import styled from "styled-components"
 import { setIsSeek } from "../../features/Lyrics/Lyrics"
 import { setPlaying, setProgressInterval } from "../../features/SettingPlay/settingPlay"
 import { LoadingSvg } from "../loading/LoadingSvg"
-
-const LyricStyleds = styled.li`
-   animation: opactiy 0.5s linear forwards;
-
-   &.up {
-      animation: out 0.5s linear forwards !important;
-   }
-
-   & > span {
-      display: inline-block;
-      text-align: center;
-      margin: 20px 0;
-      letter-spacing: 1.2px;
-      font-weight: 700;
-      line-height: 1.2;
-      position: relative;
-      white-space: nowrap;
-      overflow: hidden;
-      .kara-text-highlight {
-         width: 0;
-         position: absolute;
-         top: 0;
-         left: 0;
-         color: #ffed00;
-         overflow: hidden;
-      }
-   }
-
-   @keyframes opactiy {
-      from {
-         opacity: 0.2;
-      }
-      to {
-         opacity: 1;
-      }
-   }
-   @keyframes out {
-      from {
-         opacity: 1;
-      }
-      to {
-         opacity: 0.2;
-      }
-   }
-`
+import { LyricStyleds } from "../../asset/styles/styledComponents";
 
 const Word = memo(({ data, index }) => {
    const liRef = useRef()
