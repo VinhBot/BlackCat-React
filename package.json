@@ -1,9 +1,9 @@
 {
   "name": "blackcat-react",
-  "description": "Trang web nghe nhạc được viết từ reactjs và api từ zing mp3",
   "version": "0.1.0",
-  "author": "Nguyễn Vinh",
   "private": true,
+  "description": "Trang web nghe nhạc được viết từ reactjs và api từ zing mp3",
+  "author": "Nguyễn Vinh",
   "license": "ISC",
   "keywords": [
     "ReactJs",
