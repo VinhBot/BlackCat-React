@@ -17,20 +17,20 @@ import { setPlayingAction } from "../features/SettingPlay/settingPlay"
 import { pushMvsLogged } from "../features/Logged/loggedFeatures"
 
 const VideoPopUp = () => {
-   const { id } = useParams()
-   const [datas, setData] = useState([])
-   const clipRef = useRef()
-   const dispatch = useDispatch()
-   const navigator = useNavigate()
+   const { id } = useParams();
+   const [datas, setData] = useState([]);
+   const clipRef = useRef();
+   const dispatch = useDispatch();
+   const navigator = useNavigate();
    const idOpen = useSelector((state) => state.setOpenMainMv.historyOpen)
    const infoCurrentMv = useSelector((state) => state.queueNowPlay.infoCurrentMv)
    const fetchData = useCallback(async () => {
-      const data = await axios.get(tmdAPI.getVideoMv(id))
+      const data = await axios.get(tmdAPI.getVideoMv(id));
       if (datas.length === 0 || !datas) {
          setData(data.data.data)
       };
       // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [])
+   }, []);
    const handleClose = useCallback(() => {
       let video = document.querySelector("#video-react video");
       video.pause();
@@ -39,14 +39,14 @@ const VideoPopUp = () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
    useEffect(() => {
-      document.getElementById("scrollableDiv").style.zIndex = "120"
+      document.getElementById("scrollableDiv").style.zIndex = "120";
       return () => {
-         document.getElementById("scrollableDiv").style.zIndex = "1"
-      }
+         document.getElementById("scrollableDiv").style.zIndex = "1";
+      };
    }, []);
    useLayoutEffect(() => {
-      scrollTop()
-      fetchData()
+      scrollTop();
+      fetchData();
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [id])
    useLayoutEffect(() => {
@@ -64,6 +64,7 @@ const VideoPopUp = () => {
          </div>
       );
    };
+   console.log("mv", datas);
    return (
       <div className="zm-video-modal ">
          <div className="relative  w-full h-full">
@@ -86,10 +87,10 @@ const VideoPopUp = () => {
                                        </div>
                                        <div className="main_subtitle">
                                           {datas?.artists.map((e, index) => {
-                                             let prara = ", "
+                                             let prara = ", ";
                                              if (index === datas.artists.length - 1) {
-                                                prara = "."
-                                             }
+                                                prara = ".";
+                                             };
                                              return (
                                                 <span key={index}>
                                                    <Link to={`/nghe-si/${e.alias}/`}>{e.name}</Link>
@@ -117,11 +118,7 @@ const VideoPopUp = () => {
                                     <i className="icon ic-minimize"></i>
                                  </button>
 
-                                 <button
-                                    onClick={() => handleClose()}
-                                    className="zm-btn zm-tooltip-btn is-hover-circle button"
-                                    tabIndex={0}
-                                 >
+                                 <button onClick={() => handleClose()} className="zm-btn zm-tooltip-btn is-hover-circle button" tabIndex={0}>
                                     <i className="icon ic-close"></i>
                                  </button>
                               </div>

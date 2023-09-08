@@ -3,7 +3,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import React, { memo, useState, useLayoutEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useGetHomePage } from "../../asset/api/path";
-import { LoadingSkeleton } from "../loading/LoadingSvg";
 import { SlideStyle } from "../../asset/styles/styledComponents";
 
 const SliderHomePage = memo(() => {
@@ -25,11 +24,14 @@ const SliderHomePage = memo(() => {
           <div className="gallery-container slider_list min-h-[160px]">
             <Swiper
               modules={[Navigation, Autoplay, Pagination]}
-              height={216} // 
+              height={216} 
               loop={true} // tạp vòng lặp
               autoplay={{ delay: 3500, disableOnInteraction: false }} // tự động chuyển đổi hình ảnh
               pagination={{ clickable: true }}
-              loopfillgroupwithblank="true"
+              scrollbar={{ draggable: false }}
+              allowTouchMove={false}
+              loopfillgroupwithblank={"true"}
+              speed={600}
               navigation={{
                 prevEl: navigationPrevRef.current,
                 nextEl: navigationNextRef.current,
@@ -38,9 +40,6 @@ const SliderHomePage = memo(() => {
                 swiper.params.navigation.prevEl = navigationPrevRef.current
                 swiper.params.navigation.nextEl = navigationNextRef.current
               }}
-              speed={600}
-              allowTouchMove={false}
-              scrollbar={{ draggable: false }}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -55,8 +54,8 @@ const SliderHomePage = memo(() => {
                   slidesPerView: 2,
                   allowTouchMove: true,
                 },
-                1040: { 
-                  slidesPerView: 4
+                1040: {
+                  slidesPerView: 3
                 },
               }}
             >
@@ -68,7 +67,7 @@ const SliderHomePage = memo(() => {
                   <span className="material-icons-outlined">arrow_forward_ios</span>
                 </button>
               </>
-              {datas && datas.length > 0 && datas.map((e) => {
+              {datas && datas.length > 0 && datas.map((e, index) => {
                 return (
                   <SwiperSlide key={e.banner}>
                     <div className="gallery-item">
@@ -87,7 +86,7 @@ const SliderHomePage = memo(() => {
                     <div className="gallery-item">
                       <div className="zm-card  cursor-pointer">
                         <div className="zm-card-image ">
-                          <LoadingSkeleton className="w-full h-[216px] " />
+                          <div className="skeleton w-full h-[216px]" />
                         </div>
                       </div>
                     </div>

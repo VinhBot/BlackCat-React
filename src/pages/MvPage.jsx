@@ -12,9 +12,9 @@ const MvPage = () => {
          <div className="main_mv-header mb-[30px]">
             <h3>MV</h3>
             <nav className="main_mv-header_navbar">
-              {project.map(({ name, path, id }, index) => (
-                  <NavLink key={index} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={path} id={id}>
-                    {name}
+              {project.map((item, index) => (
+                  <NavLink key={index} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={item.path} id={item.id}>
+                    {item.name}
                   </NavLink>
                ))}
             </nav>

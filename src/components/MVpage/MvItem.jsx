@@ -24,7 +24,7 @@ const MvItem = memo(({ data, isMvFull }) => {
    return (
       <div className={`col mv-items ${!isMvFull ? "l-4 m-4 c-6 " : "l-3 m-4 c-6 !mb-[20px]"}`}>
          <div onClick={() => handleClick()} className="cursor-pointer todaychoice_list-item-link main-page_list-item main_page-hover relative">
-            <div className="todaychoice_list-item-link main-page_list-item_img" href="#">
+            <div className="todaychoice_list-item-link main-page_list-item_img" href="# ">
                <figure>
                   <img src={thumbnailM} alt={title} />
                   {data.streamingStatus === 2 && (
