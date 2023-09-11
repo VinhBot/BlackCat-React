@@ -36,6 +36,7 @@ export const tmdAPI = {
    // Lyrics :
    getLyrics: (id) => `${tmdbEndpoint}/songlyrics/${id}`,
 };
+
 /*========================================================*/
 export function useGetHomePage() {
    return useQuery(["getHotKey"], async() => {

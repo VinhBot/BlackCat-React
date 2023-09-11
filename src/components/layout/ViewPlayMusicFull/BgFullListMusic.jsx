@@ -42,7 +42,7 @@ const BgFullListMusic = memo(({ isScroll }) => {
          <Swiper
             ref={swiperERFf}
             modules={[Navigation, Pagination]}
-            lazy={true}
+            lazy={"true"}
             slidesPerView={5}
             spaceBetween={5}
             centeredSlides={true}

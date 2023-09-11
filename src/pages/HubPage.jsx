@@ -22,8 +22,8 @@ const HubPage = () => {
                <img src={datas.banners[1].cover} alt="" />
             </figure>
          </div>
-         <MoodHub data={selectoMood}/>
          <NationsHub data={selectoNation}/>
+         <MoodHub data={selectoMood}/>
          <GenreHub data={selectoGenre}/>
       </div>
    );

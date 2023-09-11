@@ -20,7 +20,7 @@ const PortalMVpage = ({ Portal, hide, data }) => {
    } else if (content.type === "feedVideo") {
       imgL = content?.thumbnail
       urlVideo = Object.values(content.source)[0]
-   }
+   };
 
    return (
       <Portal>
@@ -114,7 +114,7 @@ const PortalMVpage = ({ Portal, hide, data }) => {
             </div>
          </PortalStyle>
       </Portal>
-   )
-}
+   );
+};
 
-export default PortalMVpage
+export default PortalMVpage;

@@ -1,6 +1,6 @@
-import Tippy from "@tippyjs/react"
-import React, { useState } from "react"
-import SettingPortal from "../../Portal/SettingPortal";
+import React, { useState } from "react";
+import Tippy from "@tippyjs/react";
+import SettingPortal from "./Portal/SettingPortal.jsx";
 
 const ItemSetting = () => {
    const [open, setOpen] = useState(false)

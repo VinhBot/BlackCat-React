@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import Tippy from "@tippyjs/react";
 
-import { 
-   SettingPortalStyles, 
-   SettingPortalChildrenStylle
-} from "../../assets/styledComponents";
-
+import { SettingPortalStyles, SettingPortalChildrenStylle } from "../../../../assets/styledComponents";
 
 const SettingPortalChildren = () => {
-   const [state, setSate] = useState(false)
-
+   const [state, setSate] = useState(false);
    return (
       <SettingPortalChildrenStylle className="menu-list quality-list">
          <li onClick={() => setSate(false)} className="">
@@ -35,27 +30,20 @@ const SettingPortalChildren = () => {
             </div>
          </li>
       </SettingPortalChildrenStylle>
-   )
-}
+   );
+};
 
 const SettingPortal = () => {
    const project = [
-     { name: "Giới thiệu", icons: "icon ic-20-info", path: "/profile" },
-     { name: "Facebook", icons: "icon ic-20-Report", path: "https://www.facebook.com/phan.vinh.92754/" },
-     { name: "Liên hệ", icons: "icon ic-20-Call", path: "https://mp3.zing.vn/huong-dan/contact" },
-     // { name: "", icons: "", path: "" },
+      { name: "Giới thiệu", icons: "icon ic-20-info", path: "/profile" },
+      { name: "Facebook", icons: "icon ic-20-Report", path: "https://www.facebook.com/blackcat.288203/?locale=vi_VN" },
+      { name: "Liên hệ", icons: "icon ic-20-Call", path: "https://mp3.zing.vn/huong-dan/contact" },
+      // { name: "", icons: "", path: "" },
    ];
    return (
       <SettingPortalStyles className="setting-portal">
          <ul className="menu-list relative">
-            <Tippy
-               interactiveBorder={0}
-               offset={[-10, 0]}
-               interactive={true}
-               arrow={false}
-               content={<SettingPortalChildren></SettingPortalChildren>}
-               placement={"left-start"}
-            >
+            <Tippy interactiveBorder={0} offset={[-10, 0]} interactive={true} arrow={false} content={<SettingPortalChildren />} placement={"left-start"}>
                <li className="quality-setting">
                   <button className="zm-btn button flex n w-full items-center" tabIndex={0}>
                      <i className="icon ic-20-quaility-SQ" />
@@ -67,18 +55,18 @@ const SettingPortal = () => {
          </ul>
          <footer className="footer">
             <ul className="menu-list zm-nav-footer">
-              {project.map(({name, icons, path}, index) => (
-                <li key={index}>
-                  <a target="_blank" href={path} className="z-link zm-btn" title={name} rel="noreferrer">
-                     <i className={icons}/>
-                     <div>{name}</div>
-                  </a>
-                 </li>
-              ))}
+               {project.map(({ name, icons, path }, index) => (
+                  <li key={index}>
+                     <a target="_blank" href={path} className="z-link zm-btn" title={name} rel="noreferrer">
+                        <i className={icons} />
+                        <div>{name}</div>
+                     </a>
+                  </li>
+               ))}
             </ul>
          </footer>
       </SettingPortalStyles>
-   )
-}
+   );
+};
 
-export default SettingPortal
+export default SettingPortal;

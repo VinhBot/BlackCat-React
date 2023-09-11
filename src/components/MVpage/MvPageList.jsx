@@ -13,11 +13,11 @@ const MvPageList = memo(() => {
    const page = useRef(1)
    const [loading, setLoading] = useState(false)
 
-   const fetchData = async () => {
-      const data = await axios.get(tmdAPI.getListMv(id, page.current))
-      const dataSelector = data.data.data.items
-      const tolal = data.data.data.toltal
-      const more = data.data.data.hasMore
+   const fetchData = async() => {
+      const data = await axios.get(tmdAPI.getListMv(id, page.current));
+      const dataSelector = data.data.data.items;
+      const tolal = data.data.data.toltal;
+      const more = data.data.data.hasMore;
       page.current += 1;
       if (datas.length >= tolal || !more) {
          return setLoading(false);
@@ -51,7 +51,13 @@ const MvPageList = memo(() => {
    }, [loading]);
 
    if (datas.length === 0) return <LoadingSvg/>
-   console.log(datas)
+
+   // axios({
+   //    method: "post",
+   //    url: "https://express.vinhbot.repl.co/data",
+   //    data: { data: datas },
+   // });
+   
    return (
       <div className="">
          <DropDownMv />

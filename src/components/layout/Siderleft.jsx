@@ -3,6 +3,18 @@ import { useSelector } from "react-redux";
 import React, { memo } from "react";
 import { useWindowSize, useToggle } from "./Hook";
 
+const project_1 = [
+   { name: "Top Chart", title: "#topchart", icons: "icon  ic-24-ChartTab", path: "/zing-chart" },
+   { name: "Radio", title: "Radio", icons: "icon  ic-24-RadioTab", path: "/radio" },
+   { name: "Theo Dõi", title: "Theo Dõi", icons: "icon  ic-24-FeedTab", path: "/newfeed/Viet-Nam/IWZ9Z08I" },
+];
+
+const project_2 = [
+   { name: "Nhạc mới", title: "Nhạc mới", icons: "icon ic-24-NewReleaseTab", path: "moi-phat-hanh" },
+   { name: "Thể Loại", title: "Thể Loại", icons: "icon ic-24-GenreTab", path: "hub" },
+   { name: "Top 100", title: "#Top100", icons: "icon  ic-24-Top100Tab", path: "top100" },
+   { name: "MV", title: "MV", icons: "icon  ic-24-MVTab", path: "mv/IWZ9Z08I" },
+];
 
 const Siderleft = memo(() => {
    const navigate = useNavigate();
@@ -10,17 +22,6 @@ const Siderleft = memo(() => {
    const { pathname } = useLocation();
    const [isToggle, setIsToggle] = useToggle(false);
    const activeUser = useSelector((state) => state.users.activeUser);
-   const project_1 = [
-     { name: "Top Chart", title: "#topchart", icons: "icon  ic-24-ChartTab", path: "/zing-chart" },
-     { name: "Radio", title: "Radio", icons: "icon  ic-24-RadioTab", path: "/radio" },
-     { name: "Theo Dõi", title: "Theo Dõi", icons: "icon  ic-24-FeedTab", path: "/newfeed/Viet-Nam/IWZ9Z08I" },
-   ];
-   const project_2 = [
-     { name: "Nhạc mới", title: "Nhạc mới", icons: "icon ic-24-NewReleaseTab", path: "moi-phat-hanh" },
-     { name: "Thể Loại", title: "Thể Loại", icons: "icon ic-24-GenreTab", path: "hub" },
-     { name: "Top 100", title: "#Top100", icons: "icon  ic-24-Top100Tab", path: "top100" },
-     { name: "MV", title: "MV", icons: "icon  ic-24-MVTab", path: "mv/IWZ9Z08I" },
-   ];
    return (
       <aside className={`sider-navbar ${width <= 1225 && !isToggle ? "navbar-left-actice" : width <= 1225 && isToggle && "navbar-exanded-active"} `}>
          <div className="sider">
@@ -38,12 +39,12 @@ const Siderleft = memo(() => {
                {/*  */}
                <div
                   onClick={() => {
-                    if(!activeUser) {
-                      // eslint-disable-next-line no-restricted-globals                  
-                      if (confirm("Bạn cần đăng nhập") === true) {
-                        navigate("/auth");
-                      } else return;
-                    } else navigate("/mymusic/");
+                     if (!activeUser) {
+                        // eslint-disable-next-line no-restricted-globals                  
+                        if (confirm("Bạn cần đăng nhập") === true) {
+                           navigate("/auth");
+                        } else return;
+                     } else navigate("/mymusic/");
                   }}
                   to="/mymusic/" title="Cá nhân" className={`sider_menu-item sider_menu-item-acitve ${pathname.indexOf("mymusic") > 0 ? "sider_active" : ""} `}
                >
@@ -55,7 +56,7 @@ const Siderleft = memo(() => {
                {/**  */}
                <NavLink to="/" className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title="Trang Chủ">
                   <div>
-                     <i className="icon  ic-24-HomeTab"/>
+                     <i className="icon ic-24-HomeTab" />
                      <span className="sider_menu-item-title">Trang Chủ</span>
                   </div>
                </NavLink>
@@ -63,7 +64,7 @@ const Siderleft = memo(() => {
                {project_1.map((item, index) => (
                   <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
                      <div className="cursor-pointer">
-                        <i className={item.icons}/>
+                        <i className={item.icons} />
                         <span className="sider_menu-item-title"> {item.name}</span>
                      </div>
                   </NavLink>
@@ -74,14 +75,14 @@ const Siderleft = memo(() => {
          <div className="sider_divide" />
          <div className="sider_menu sider_menu-bottom">
             <ul className="sider_menu-list">
-              {project_2.map((item, index) => (       
-                <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
-                  <div className="cursor-pointer">
-                     <i className={item.icons}/>
-                     <span className="sider_menu-item-title">{item.name}</span>
-                  </div>
-                </NavLink>
-              ))}               
+               {project_2.map((item, index) => (
+                  <NavLink key={index} to={item.path} className={({ isActive }) => isActive ? "sider_menu-item sider_menu-item-acitve sider_active" : "sider_menu-item sider_menu-item-acitve "} title={item.title}>
+                     <div className="cursor-pointer">
+                        <i className={item.icons} />
+                        <span className="sider_menu-item-title">{item.name}</span>
+                     </div>
+                  </NavLink>
+               ))}
             </ul>
          </div>
          {/* */}

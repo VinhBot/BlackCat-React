@@ -94,8 +94,7 @@ const FavoriteArtisItem = memo(({ item, clasName, isHub, isCenter }) => {
                      <>
                         <p className={`favorite_content-name ${isCenter ? "text-center" : ""}`}>{title}</p>
                         <div className="favorite_content-list flex justify-center items-center gap-[10px] ">
-                           {item.playlists &&
-                              item.playlists.map((e, index) => {
+                           {item.playlists && item.playlists.map((e, index) => {
                                  if (index > 2) return
 
                                  return (

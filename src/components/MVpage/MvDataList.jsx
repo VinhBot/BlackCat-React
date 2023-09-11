@@ -25,7 +25,7 @@ const MvDataList = memo(({ item }) => {
    return (
       <PlayListSelector classAdd2={"container_top100-list "} key={uuidv4()} title={`MV Của ${item.name} `}>
          {datas?.slice(0, 8).map((e) => {
-            return <MvItem isMvFull key={uuidv4()} data={e}></MvItem>
+            return <MvItem isMvFull key={uuidv4()} data={e}/>
          })}
       </PlayListSelector>
    )

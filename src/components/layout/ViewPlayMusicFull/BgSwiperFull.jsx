@@ -14,20 +14,12 @@ const imgBgViewFull = [
    "https://cdn.sforum.vn/sforum/wp-content/uploads/2022/03/endless-takeout.png",
    "https://animestore.vn/wp-content/uploads/2022/10/hinh-nen-phong-anh-anime-cho-may-tinh_041751623_thumb.jpg",
    "https://vanhoadoisong.vn/wp-content/uploads/2022/05/100-hinh-nen-anh-phong-canh-anime-dep-full-hd-may-tinh-dien-thoai-01.jpg",
-   "https://anhnenchat.com/wp-content/uploads/2021/07/canh-dep-anime-chat-luong-nhat-ma-ban-nen-xem-ngay-tai-day-1-1060x570.jpg",
 ];
 
 const BgSwiperFull = memo(() => {
    return (
       <div className="image-effect ">
-         <Swiper
-            effect={"fade"}
-            modules={[EffectFade, Navigation, Pagination, Autoplay]}
-            autoplay={{ delay: 8800, disableOnInteraction: false }}
-            className="mySwiper"
-            loop={true}
-            speed={1200}
-         >
+         <Swiper effect={"fade"} modules={[EffectFade, Navigation, Pagination, Autoplay]} autoplay={{ delay: 8800, disableOnInteraction: false }} className="mySwiper" loop={true} speed={1200}>
             {imgBgViewFull && imgBgViewFull.map((e, index) => (
                   <SwiperSlide key={index}>
                      <li>

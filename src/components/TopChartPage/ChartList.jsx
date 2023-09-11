@@ -1,6 +1,5 @@
-import React, { memo } from "react"
-import { useState } from "react"
-import ItemChartList from "./ItemChartList"
+import React, { memo, useState } from "react";
+import ItemChartList from "./ItemChartList";
 
 const ChartList = memo(({ data }) => {
    const [numRender, setNumRender] = useState(10);

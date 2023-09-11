@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useState, useRef, memo, useLayoutEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Blur from "react-blur";
 import { setOffClass, setOffMain } from "../../../assets/redux/Features/openMainFullFeatures.js";
 import { fetchDataLyrics } from "../../../assets/redux/Features/LyricsFeatures.js";
 import BgFullListMusic from "./BgFullListMusic";
@@ -10,17 +9,15 @@ import BgFullLyrics from "./BgFullLyrics";
 import BgSwiperFull from "./BgSwiperFull";
 import BtnSetting from "./BtnSetting";
 
-
 const ViewPlayMusicMain = () => {
-   const dispatch = useDispatch()
-   const [open, setOpen] = useState(1)
-   const [isScroll, setIsScroll] = useState(false)
-   const bottomRef = useRef()
-   const isBgFull = useSelector((state) => state.setting.isBgFull)
-   const infoSongCurrent = useSelector((state) => state.queueNowPlay.infoSongCurrent)
-   const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId)
-   const infoCurrenAlbum = useSelector((state) => state.queueNowPlay.infoCurrenAlbum)
-   const img = infoSongCurrent.thumbnailM
+   const dispatch = useDispatch();
+   const [open, setOpen] = useState(1);
+   const [isScroll, setIsScroll] = useState(false);
+   const bottomRef = useRef();
+   const infoSongCurrent = useSelector((state) => state.queueNowPlay.infoSongCurrent);
+   const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId);
+   const infoCurrenAlbum = useSelector((state) => state.queueNowPlay.infoCurrenAlbum);
+   const isBgFull = useSelector((state) => state.setting.isBgFull);
 
    // fetch lyric
    useLayoutEffect(() => {
@@ -29,24 +26,22 @@ const ViewPlayMusicMain = () => {
 
    // hidden
    useLayoutEffect(() => {
-      const playingBar = document.querySelector(".playing-bar")
-      var timeout
+      const playingBar = document.querySelector(".playing-bar");
+      var timeout;
       const hidden = () => {
-         clearTimeout(timeout)
+         clearTimeout(timeout);
          timeout = setTimeout(function () {
             setTimeout(() => {
-               setIsScroll(true)
-               playingBar.classList.add("play_hidden")
-            }, 500)
-         }, 7000)
-         playingBar.classList.remove("play_hidden")
-         setIsScroll(false)
-      }
-
-      document.addEventListener("mousemove", hidden)
-
-      return () => document.removeEventListener("mousemove", hidden)
-   }, [])
+               setIsScroll(true);
+               playingBar.classList.add("play_hidden");
+            }, 500);
+         }, 7000);
+         playingBar.classList.remove("play_hidden");
+         setIsScroll(false);
+      };
+      document.addEventListener("mousemove", hidden);
+      return () => document.removeEventListener("mousemove", hidden);
+   }, []);
 
    // Toggle full screen
    const toggleFullScreen = useCallback(() => {
@@ -76,7 +71,7 @@ const ViewPlayMusicMain = () => {
       <div className="nowplaying text white">
          <div className="nowplaying-bg">
             <div className={`nowplaying-overlay ${isBgFull ? "opacity-20" : ""}`} />
-            {isBgFull ? <BgSwiperFull></BgSwiperFull> : <Blur img={img} blurRadius={90} enableStyles></Blur>}
+            {isBgFull ? <BgSwiperFull /> : <img src={infoSongCurrent.thumbnailM} alt="" />}
          </div>
          <div className="nowplaying-content">
             <div className="nowplaying-header">
@@ -98,11 +93,7 @@ const ViewPlayMusicMain = () => {
                   <li onClick={() => setOpen(2)} className={`nowplaying-header_tab-item ${open === 2 ? "active" : ""}`}>
                      Karaoke
                   </li>
-                  <li
-                     onClick={() => setOpen(3)}
-                     id="full-lyrics"
-                     className={`nowplaying-header_tab-item  ${open === 3 ? "active" : ""}`}
-                  >
+                  <li onClick={() => setOpen(3)} id="full-lyrics" className={`nowplaying-header_tab-item  ${open === 3 ? "active" : ""}`}>
                      Lời bài hát
                   </li>
                </ul>
@@ -130,9 +121,9 @@ const ViewPlayMusicMain = () => {
                </div>
             </div>
             <div className="nowplaying-body">
-               {open === 1 && <BgFullListMusic isScroll={isScroll}></BgFullListMusic>}
-               {open === 2 && <BgFullKaroke></BgFullKaroke>}
-               {open === 3 && <BgFullLyrics></BgFullLyrics>}
+               {open === 1 && <BgFullListMusic isScroll={isScroll} />}
+               {open === 2 && <BgFullKaroke />}
+               {open === 3 && <BgFullLyrics />}
             </div>
             <div className="nowplaying-bottom">
                <div className={`zm-text-transition  ${bottomRef?.current?.innerText?.length > 70 ? " is-transition" : ""} flex items-center justify-center`}>
@@ -142,21 +133,18 @@ const ViewPlayMusicMain = () => {
                   >
                      {infoSongCurrent.title} -{" "}
                      <span className="artist">
-                        {infoSongCurrent.artists &&
-                           infoSongCurrent.artists?.map((e, index) => {
-                              let prara = ", "
-
-                              if (index === infoSongCurrent.artists.length - 1) {
-                                 prara = ""
-                              }
-
-                              return (
-                                 <span key={index}>
-                                    <span className="is-ghost">{e.name}</span>
-                                    {prara}
-                                 </span>
-                              )
-                           })}
+                        {infoSongCurrent.artists && infoSongCurrent.artists?.map((e, index) => {
+                           let prara = ", ";
+                           if (index === infoSongCurrent.artists.length - 1) {
+                              prara = "";
+                           };
+                           return (
+                              <span key={index}>
+                                 <span className="is-ghost">{e.name}</span>
+                                 {prara}
+                              </span>
+                           )
+                        })}
                      </span>
                   </div>
                </div>

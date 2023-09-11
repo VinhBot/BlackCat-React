@@ -15,8 +15,6 @@ import MvDataList from "../components/MVpage/MvDataList.jsx";
 import { tmdAPI } from "../assets/api.js";
 import { scrollTop } from "../assets/functions.js";
 
-
-
 const VideoPopUp = () => {
    const { id } = useParams();
    const [datas, setData] = useState([]);
@@ -59,19 +57,19 @@ const VideoPopUp = () => {
          <div className="zm-video-modal  is-loading">
             <div className="relative  w-full h-full">
                <div className="mv_play-main">
-                  <LoadingSvg/>
+                  <LoadingSvg />
                </div>
             </div>
          </div>
       );
    };
-   console.log("mv", datas);
+ 
    return (
       <div className="zm-video-modal ">
          <div className="relative  w-full h-full">
             <div className="mv_play-main">
                <div className="video-wrapper  h-full relative">
-                  <div className="cover-bg" style={{ backgroundImage: `url("${datas?.thumbnailM || null}")` }}/>
+                  <div className="cover-bg" style={{ backgroundImage: `url("${datas?.thumbnailM || null}")` }} />
                   <div className="blur-bg"></div>
                   <div className="video-container pt-3 ">
                      <div className=" w-[95vw] mx-auto">
@@ -147,7 +145,7 @@ const VideoPopUp = () => {
                                     <div className="video-queue-list p-[1.6rem]">
                                        <PlayListSelector classAdd={"!mt-0"} title="Danh Sách Phát">
                                           {datas.recommends.map((e) => {
-                                             return <VideoPlayItems key={e.encodeId} data={e}/>
+                                             return <VideoPlayItems key={e.encodeId} data={e} />
                                           })}
                                        </PlayListSelector>
                                     </div>
@@ -161,7 +159,7 @@ const VideoPopUp = () => {
                            <div className="main_mv main-page-item active">
                               <div className="main_mv-container ">
                                  {datas?.artists?.map((e, index) => {
-                                    return <MvDataList key={index} item={e}/>
+                                    return <MvDataList key={index} item={e} />
                                  })}
                               </div>
                            </div>
