@@ -5,8 +5,8 @@ import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import ArtistSpotlight from "../SliderHome/ArtistSpotlight";
 import { LoadingSvg } from "../loading/LoadingSvg";
-import { useWindowSize } from "../../layout/Hook";
-import { tmdAPI } from "../../asset/api/path";
+import { useWindowSize } from "../layout/Hook";
+import { tmdAPI } from "../../assets/api.js";
 import FollowItems from "./FollowItems";
 
 const NewFeedPageChidlen = () => {

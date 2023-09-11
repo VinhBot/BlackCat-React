@@ -13,10 +13,10 @@ import {
    getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject,
    // firestore
    doc, getDoc, updateDoc
- } from "../../asset/firebase/firebase-config";
+ } from "../../assets/firebase-config.js";
 import PlayListSelector from "../Selection/PlayListSelector";
-import { setImgUrl, updateUser } from "../../features/User/userFeatures";
-import { UpdateProfileStyled } from "../../asset/styles/styledComponents";
+import { setImgUrl, updateUser } from "../../assets/redux/Features/userFeatures.js";
+import { UpdateProfileStyled } from "../../assets/styledComponents";
 
 /*========================================================
 ========================================================*/

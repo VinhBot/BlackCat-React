@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import { getNewSongRelease } from "../asset/api/path"
-import { LoadingSvg, ItemChartList } from "../components/main";
-import { setPlay, setReady } from "../features/SettingPlay/settingPlay"
-import { fetchPlayList } from "../features/QueueFeatures/QueueFeatures"
+
+import { setPlay, setReady } from "../assets/redux/Features/settingPlayFeatures.js";
+import { fetchPlayList } from "../assets/redux/Features/QueueFeatures.js";
+import ItemChartList from "../components/TopChartPage/ItemChartList.jsx";
+import { LoadingSvg } from "../components/loading/LoadingSvg.jsx";
+import { getNewSongRelease } from "../assets/api.js";
+
 const NewMusicPage = () => {
    const { data, status } = getNewSongRelease();
    const [datas, setData] = useState([]);

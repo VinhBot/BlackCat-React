@@ -2,7 +2,7 @@ import { Chart as ChartJS, LineController, LineElement, PointElement, LinearScal
 import React, { memo, useEffect, useState } from "react";
 import { Chart } from "react-chartjs-2";
 
-import { useGetHomePage } from "../../asset/api/path";
+import { useGetHomePage } from "../../assets/api.js";
 
 ChartJS.register(CategoryScale, LineController, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 

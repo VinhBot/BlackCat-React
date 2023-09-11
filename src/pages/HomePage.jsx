@@ -1,8 +1,8 @@
 import React, { memo, useEffect } from "react";
-import { scrollTop } from "../asset/data/functions";
+import { scrollTop } from "../assets/functions.js";
 
 import SliderHomePage from "../components/SliderHome/SliderHomePage.jsx";
-import HistoryHomePage from "../components/HomePage/HistoryHomePage.jsx";
+import HistoryHomePage from "../components/SliderHome/HistoryHomePage.jsx";
 import WantToHearHomePage from "../components/SliderHome/WantToHearHomePage.jsx";
 import NewReleaseHomePage from "../components/SliderHome/NewReleaseHomePage.jsx";
 import NewMusicEveryDayHomePage from "../components/SliderHome/NewMusicEveryDayHomePage.jsx";

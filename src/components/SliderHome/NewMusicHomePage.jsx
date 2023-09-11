@@ -4,10 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { playSongNotAlbum } from "../../features/QueueFeatures/QueueFeatures";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
+import { playSongNotAlbum } from "../../assets/redux/Features/QueueFeatures.js";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js";
 import PlayListSelector from "../Selection/PlayListSelector";
-import { useGetHomePage } from "../../asset/api/path";
+import { useGetHomePage } from "../../assets/api.js";
 import LoadingIcon from "../Icon/LoadingIcon";
 import ActionIcon from "../Icon/ActionIcon";
 

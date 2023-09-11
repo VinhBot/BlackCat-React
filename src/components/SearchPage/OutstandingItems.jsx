@@ -1,10 +1,10 @@
 import React, { memo } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
-import { fetchPlayList, playSongNotAlbum, playSongNotAlbumById } from "../../features/QueueFeatures/QueueFeatures";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
-import { OutstandingItemsStyles } from "../../asset/styles/styledComponents";
+import { pushPlayListsLogged } from "../../assets/redux/Features/loggedFeatures.js";
+import { fetchPlayList, playSongNotAlbum, playSongNotAlbumById } from "../../assets/redux/Features/QueueFeatures.js";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js";
+import { OutstandingItemsStyles } from "../../assets/styledComponents";
 
 const OutstandingItems = memo(({ data, classGrid, type, isSearch, setOpen }) => {
    const navigate = useNavigate()

@@ -2,8 +2,8 @@ import React, { memo, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import NewReleaseitem from "../NewReleaseitem/NewReleaseitem";
 import PlayListSelector from "../Selection/PlayListSelector";
-import { useGetHomePage } from "../../asset/api/path";
-import { NewReleaseStyle } from "../../asset/styles/styledComponents";
+import { useGetHomePage } from "../../assets/api.js";
+import { NewReleaseStyle } from "../../assets/styledComponents";
 
 const NewReleaseHomePage = memo(() => {
     const [selectList, setSelectList] = useState(false);

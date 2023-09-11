@@ -42,7 +42,7 @@ const HomePage = React.lazy(() => import('../pages/HomePage'));
 const AlbumPage = React.lazy(() => import('../pages/AlbumPage'));
 const ArtistPage = React.lazy(() => import('../pages/ArtistPage'));
 const Profile = React.lazy(() => import('../pages/Profile'));
-
+// render
 const RouterPage = memo(() => {
    const mainPageRef = useRef();
    const location = useLocation();

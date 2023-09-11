@@ -2,14 +2,14 @@ import React, { memo } from "react";
 import NewReleaseitem from "../NewReleaseitem/NewReleaseitem";
 import usePortal from "react-cool-portal";
 import { useSelector, useDispatch } from "react-redux";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures";
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
-import { useLikeHook } from "../../layout/Hook";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js";
+import { fetchPlayList } from "../../assets/redux/Features/QueueFeatures.js";
+import { pushPlayListsLogged } from "../../assets/redux/Features/loggedFeatures.js";
+import { useLikeHook } from "../layout/Hook";
 import {
    PortalStyless as PortalStyle ,
    InfoTopStyles
-} from "../../asset/styles/styledComponents";
+} from "../../assets/styledComponents";
 
 const ArtistInfoTop = memo(({ data }) => {
    const dispatch = useDispatch();

@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-import { useGetHomePage } from "../../asset/api/path";
+import { useGetHomePage } from "../../assets/api.js";
 import CarouselItem from "../Selection/CarouselItem";
 
 const NewMusicHomePage2 = memo(() => {

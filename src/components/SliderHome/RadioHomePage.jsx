@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useState } from "react"
-import { useGetHomePage } from "../../asset/api/path"
+import { useGetHomePage } from "../../assets/api.js"
 import PlayListSelector from "../Selection/PlayListSelector"
 import RaidoItem from "../Selection/RaidoItem"
 

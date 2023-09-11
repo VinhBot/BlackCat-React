@@ -3,9 +3,9 @@ import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import React from "react";
-import { store } from "./features/stores";
+import store from "./assets/redux/stores.js";
 import App from "./App.jsx";
-import "./asset/styles/styles";
+import "./assets/styles.js";
 
 const queryClient = new QueryClient({
    defaultOptions: {

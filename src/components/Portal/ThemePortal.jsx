@@ -2,9 +2,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import React, { memo } from "react";
-import { setThemes } from "../../features/setTheme/themeSetFeatures"
-import { themes } from "../../asset/data/dataThemes";
-import { PortalStyle } from "../../asset/styles/styledComponents";
+import { setThemes } from "../../assets/redux/Features/themeSetFeatures.js";
+import { themes } from "../../assets/dataThemes.js";
+import { PortalStyle } from "../../assets/styledComponents";
 
 const ThemePortal = memo((props) => {
    const { handleClose } = props;

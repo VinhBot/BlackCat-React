@@ -2,7 +2,7 @@ import React, { memo, useState, useLayoutEffect, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import MvItem from "./MvItem";
 import axios from "axios";
-import { tmdAPI } from "../../asset/api/path"
+import { tmdAPI } from "../../assets/api.js"
 import PlayListSelector from "../Selection/PlayListSelector"
 
 const MvDataList = memo(({ item }) => {

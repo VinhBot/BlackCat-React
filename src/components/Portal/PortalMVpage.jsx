@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react"
-import { formartTimeNewFeed } from "../../asset/data/functions"
+import { formartTimeNewFeed } from "../../assets/functions.js"
 import ReactPlayer from "react-player"
 import MyComment from "../MVpage/MyComment";
-import { PortalStyles as PortalStyle } from "../../asset/styles/styledComponents";
+import { PortalStyles as PortalStyle } from "../../assets/styledComponents";
 
 const PortalMVpage = ({ Portal, hide, data }) => {
    const [llike, setLike] = useState(false);

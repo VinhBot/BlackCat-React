@@ -2,11 +2,11 @@ import React, { memo, useEffect, useRef, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures";
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
-import { getFormartTimeDDYY } from "../../asset/data/functions";
-import { useLikeHook } from "../../layout/Hook";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js";
+import { fetchPlayList } from "../../assets/redux/Features/QueueFeatures.js";
+import { pushPlayListsLogged } from "../../assets/redux/Features/loggedFeatures.js";
+import { getFormartTimeDDYY } from "../../assets/functions.js";
+import { useLikeHook } from "../layout/Hook";
 import ActionIcon from "../Icon/ActionIcon";
 
 const AlbumPageInfo = memo(({ datas }) => {

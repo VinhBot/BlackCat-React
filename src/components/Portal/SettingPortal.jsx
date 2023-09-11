@@ -4,7 +4,7 @@ import Tippy from "@tippyjs/react";
 import { 
    SettingPortalStyles, 
    SettingPortalChildrenStylle
-} from "../../asset/styles/styledComponents";
+} from "../../assets/styledComponents";
 
 
 const SettingPortalChildren = () => {

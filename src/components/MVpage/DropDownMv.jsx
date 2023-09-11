@@ -1,11 +1,11 @@
-import React, { memo, useState, useLayoutEffect, useCallback } from "react"
-import { v4 as uuidv4 } from "uuid"
-import { useNavigate, useParams } from "react-router-dom"
-import Tippy from "@tippyjs/react"
-import { useDispatch, useSelector } from "react-redux"
-import { setText } from "../../features/MvState/MvStateFeatures"
+import React, { memo, useState, useLayoutEffect, useCallback } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useNavigate, useParams } from "react-router-dom";
+import Tippy from "@tippyjs/react";
+import { useDispatch, useSelector } from "react-redux";
+import { setText } from "../../assets/redux/Features/MvStateFeatures.js";
 import axios from "axios"
-import { tmdAPI } from "../../asset/api/path"
+import { tmdAPI } from "../../assets/api.js"
 
 const DropDownMv = memo(() => {
    const { id } = useParams()

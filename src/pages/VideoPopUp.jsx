@@ -4,17 +4,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router";
 import ReactPlayer from "react-player";
 import axios from "axios";
-import {
-  LoadingSvg, 
-  MvDataList,
-  VideoPlayItems,
-  PlayListSelector,
-} from "../components/main";
-import { tmdAPI } from "../asset/api/path";
-import { scrollTop } from "../asset/data/functions";
-import { setOpenOff } from "../features/ToggleMainMv/toggleMainMv"
-import { setPlayingAction } from "../features/SettingPlay/settingPlay"
-import { pushMvsLogged } from "../features/Logged/loggedFeatures"
+
+import { setPlayingAction } from "../assets/redux/Features/settingPlayFeatures.js";
+import { setOpenOff } from "../assets/redux/Features/toggleMainMvFeatures.js";
+import { pushMvsLogged } from "../assets/redux/Features/loggedFeatures.js";
+import PlayListSelector from "../components/Selection/PlayListSelector.jsx";
+import VideoPlayItems from "../components/VideoMv/VideoPlayItems.jsx";
+import { LoadingSvg } from "../components/loading/LoadingSvg.jsx";
+import MvDataList from "../components/MVpage/MvDataList.jsx";
+import { tmdAPI } from "../assets/api.js";
+import { scrollTop } from "../assets/functions.js";
+
+
 
 const VideoPopUp = () => {
    const { id } = useParams();

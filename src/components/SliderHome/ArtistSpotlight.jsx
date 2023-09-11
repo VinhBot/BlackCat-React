@@ -92,7 +92,7 @@ const ArtistSpotlight = memo(() => {
                               <SwiperSlide key={index}>
                                  <div onClick={() => navigate(`/nghe-si/${linkTo}`)} className="choice_list-item slick-slide slick-cloned slick-active cursor-pointer">
                                     <div className="choice_list-item-link">
-                                       <img src={img} alt="" />
+                                       <img src={img} alt=""/>
                                     </div>
                                  </div>
                               </SwiperSlide>

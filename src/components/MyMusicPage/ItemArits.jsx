@@ -1,10 +1,10 @@
 import React, { memo } from "react"
 import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
-import { useLikeHook } from "../../layout/Hook"
-import { ItemAritsStyles } from "../../asset/styles/styledComponents"
+import { fetchPlayList } from "../../assets/redux/Features/QueueFeatures.js"
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js"
+import { useLikeHook } from "../layout/Hook"
+import { ItemAritsStyles } from "../../assets/styledComponents"
 
 
 const ItemArits = memo(({ classGird, data, noneFooter, isLinkToAll }) => {

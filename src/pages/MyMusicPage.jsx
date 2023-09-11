@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState, memo } from "react";
 import { useSelector } from "react-redux";
-import { database, doc, getDoc } from "../asset/firebase/firebase-config";
+import { database, doc, getDoc } from "../assets/firebase-config.js";
 
 const MyMusicPage = memo(() => {
    const { pathname: id } = useLocation();

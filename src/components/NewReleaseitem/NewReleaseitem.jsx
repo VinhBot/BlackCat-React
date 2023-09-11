@@ -7,21 +7,21 @@ import {
   getFormartMiute,
   getConterTimeRelese,
   getFormartTimeDDYY
-} from "../../asset/data/functions"
+} from "../../assets/functions.js"
 
 import { toast } from "react-toastify";
 import ActionPlay from "../Icon/ActionPlay";
 import ActionIcon from "../Icon/ActionIcon";
 import LoadingIcon from "../Icon/LoadingIcon";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js";
 import {
   fetchPlayList,
   playSongNotAlbum,
-} from "../../features/QueueFeatures/QueueFeatures";
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
-import { useLikeHook } from "../../layout/Hook";
+} from "../../assets/redux/Features/QueueFeatures.js";
+import { pushPlayListsLogged } from "../../assets/redux/Features/loggedFeatures.js";
+import { useLikeHook } from "../layout/Hook";
 
-import { NewReleaseItemStyle } from "../../asset/styles/styledComponents";
+import { NewReleaseItemStyle } from "../../assets/styledComponents";
 
 
 

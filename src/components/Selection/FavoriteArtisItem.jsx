@@ -1,8 +1,8 @@
 import React, { memo } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router"
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures";
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay";
+import { fetchPlayList } from "../../assets/redux/Features/QueueFeatures.js";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js";
 import ActionIcon from "../Icon/ActionIcon"
 
 const FavoriteArtisItem = memo(({ item, clasName, isHub, isCenter }) => {

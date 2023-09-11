@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router";
 import React from "react";
 
-import { EmptyStyled } from "../../asset/styles/styledComponents";
+import { EmptyStyled } from "../../assets/styledComponents";
 
 const EmptyContent = ({ text, textBtn }) => {
    const navigate = useNavigate();

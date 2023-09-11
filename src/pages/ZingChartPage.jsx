@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import CharHomeItem from "../components/Selection/CharHomeItem"
-import { useGetHomeChart } from "../asset/api/path"
+import { useGetHomeChart } from "../assets/api.js"
 import ChartList from "../components/TopChartPage/ChartList"
 import WeekList from "../components/TopChartPage/WeekList"
 import { LoadingSvg }from "../components/loading/LoadingSvg"
 import { useDispatch } from "react-redux"
-import { setPlay, setReady } from "../features/SettingPlay/settingPlay"
-import { fetchPlayList } from "../features/QueueFeatures/QueueFeatures"
+import { setPlay, setReady } from "../assets/redux/Features/settingPlayFeatures.js"
+import { fetchPlayList } from "../assets/redux/Features/QueueFeatures.js";
 const ZingChartPage = () => {
    const { data, status } = useGetHomeChart();
    const [datas, setData] = useState([]);

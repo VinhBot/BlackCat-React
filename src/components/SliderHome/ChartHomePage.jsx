@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { fetchPlayList, setCurrentIndexSong } from "../../features/QueueFeatures/QueueFeatures";
 import { setPlay, setRandomSongs, setReady } from "../../features/SettingPlay/settingPlay";
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures";
-import { useGetHomePage } from "../../asset/api/path";
+import { pushPlayListsLogged } from "../../assets/redux/Features/loggedFeatures.js";
+import { useGetHomePage } from "../../assets/api.js";
 import CharHomeItem from "../Selection/CharHomeItem";
 
 const ChartHomePage = memo(() => {

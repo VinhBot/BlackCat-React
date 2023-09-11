@@ -3,7 +3,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import React, { memo, useState } from "react";
 import PlayListSelector from "../Selection/PlayListSelector";
-import { EventStyle } from "../../asset/styles/styledComponents";
+import { EventStyle } from "../../assets/styledComponents";
 
 const EventHomePage = memo(() => {
   const project = [

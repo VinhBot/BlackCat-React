@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import PlayListSelector from "../Selection/PlayListSelector";
-import { useGetHomePage } from "../../asset/api/path";
+import { useGetHomePage } from "../../assets/api.js";
 import CarouselItem from "../Selection/CarouselItem";
 
 

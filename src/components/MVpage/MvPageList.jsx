@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import MvItem from "./MvItem"
-import { tmdAPI } from "../../asset/api/path"
+import { tmdAPI } from "../../assets/api.js"
 import DropDownMv from "./DropDownMv"
 import { LoadingSvg } from "../loading/LoadingSvg"
 

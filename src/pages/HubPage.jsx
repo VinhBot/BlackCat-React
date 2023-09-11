@@ -1,8 +1,11 @@
-import React from "react";
 import { useNavigate } from "react-router";
-import { GenreHub, LoadingSvg, NationsHub, MoodHub } from "../components/main";
+import React from "react";
 
-import data from "../asset/Json/hubPage.json";
+import { LoadingSvg } from "../components/loading/LoadingSvg.jsx";
+import NationsHub from "../components/HubPage/NationsHub.jsx";
+import GenreHub from "../components/HubPage/GenreHub.jsx";
+import MoodHub from "../components/HubPage/MoodHub.jsx";
+import data from "../assets/Json/hubPage.json";
 
 const HubPage = () => {
    const navigate = useNavigate();

@@ -1,8 +1,8 @@
 import React, { memo, useState } from "react";
 import usePortal from "react-cool-portal";
-import { formartTimeNewFeed } from "../../asset/data/functions";
+import { formartTimeNewFeed } from "../../assets/functions.js";
 import PortalMVpage from "../Portal/PortalMVpage";
-import { _ItemStyles as ItemStyles } from "../../asset/styles/styledComponents";
+import { _ItemStyles as ItemStyles } from "../../assets/styledComponents";
 
 const FollowItems = memo(({ data }) => {
    const { like, publisher, createdTime, title, content, commend } = data;

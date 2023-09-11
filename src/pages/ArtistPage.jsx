@@ -2,10 +2,12 @@ import React, { useState, useLayoutEffect } from "react";
 import { Outlet, useParams } from "react-router";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-import { ArtistInfoTop, LoadingSvg } from "../components/main";
-import { scrollTop } from "../asset/data/functions";
-import { tmdAPI } from "../asset/api/path";
-import "./styles/ArtistPage.scss";
+
+import ArtistInfoTop from "../components/ArtistPage/ArtistInfoTop.jsx";
+import {  LoadingSvg } from "../components/loading/LoadingSvg.jsx";
+import { ArtistPageStyles } from "../assets/styledComponents.js";
+import { scrollTop } from "../assets/functions.js";
+import { tmdAPI } from "../assets/api.js";
 
 const ArtistPage = () => {
    const { name } = useParams();
@@ -30,7 +32,7 @@ const ArtistPage = () => {
      return <LoadingSvg/>
    };
    return (
-      <div className=" mt-5 ">
+      <ArtistPageStyles className=" mt-5 ">
          <ArtistInfoTop data={datas}/>
          <div className="flex items-center min-h-[52px] mb-[30px]">
             <ul className="zm-navbar-menu flex items-center justify-center gap-[10px]">
@@ -44,7 +46,7 @@ const ArtistPage = () => {
             </ul>
          </div>
          <Outlet context={datas} />
-      </div>
+      </ArtistPageStyles>
    );
 };
 

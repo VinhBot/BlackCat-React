@@ -3,7 +3,7 @@ import PlayListSelector from "../Selection/PlayListSelector"
 import { Navigation, Pagination } from "swiper/modules"
 import { v4 as uuidv4 } from "uuid"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { ItemStyles } from "../../asset/styles/styledComponents";
+import { ItemStyles } from "../../assets/styledComponents";
 
 const SidleRadio = ({ data, isFeatured }) => {
    const navigationPrevRef = useRef(null)

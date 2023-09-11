@@ -1,12 +1,13 @@
 import React, { memo, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
-import { auth, onAuthStateChanged } from "./asset/firebase/firebase-config";
-import { setPlaying } from "./features/SettingPlay/settingPlay";
-import { setUser } from "./features/User/userFeatures";
-import { Siderleft, Header } from "./layout/Header";
+import { auth, onAuthStateChanged } from "./assets/firebase-config.js";
+import { setPlaying } from "./assets/redux/Features/settingPlayFeatures.js";
+import { setUser } from "./assets/redux/Features/userFeatures.js";
+import Siderleft from "./components/layout/Siderleft.jsx";
+import BottomPlay from "./components/layout/Bottom.jsx";
+import Header from "./components/layout/Header.jsx";
 import RouterPage from "./router/RouterPage";
-import BottomPlay from "./layout/Bottom";
 /*===========================================================*/
 const App = memo(() => {
    const queueNowPlaySelector = useSelector((state) => state.queueNowPlay);

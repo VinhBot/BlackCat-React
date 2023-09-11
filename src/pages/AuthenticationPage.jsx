@@ -1,6 +1,7 @@
 /*================== npm package ==========================*/
-import { auth, database, setDoc, doc, serverTimestamp, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "../asset/firebase/firebase-config";
-import { setUser } from "../features/User/userFeatures";
+import { auth, database, setDoc, doc, serverTimestamp, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from "../assets/firebase-config.js";
+import { setUser } from "../assets/redux/Features/userFeatures.js";
+import { SignUpStyles } from "../assets/styledComponents.js";
 import React, { useState, memo, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useNavigate } from "react-router";
@@ -10,7 +11,6 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as yup from "yup";
 
-import "./styles/AuthenticationPage.scss";
 /*========================================================
 # Biểu mẫu đăng nhập
 ========================================================*/
@@ -187,7 +187,7 @@ const AuthenticationPage = () => {
      type: "error",        
    });
    return (
-      <div className="signupstyles">
+      <SignUpStyles>
          <div className="gird wide">
             <div className="flex w-full h-[100vh] items-center justify-center">
                <div className=" mb-[5rem] l-8 m-10 c-12">
@@ -220,7 +220,7 @@ const AuthenticationPage = () => {
                </div>
             </div>
          </div>
-      </div>
+      </SignUpStyles>
    );
 };
 

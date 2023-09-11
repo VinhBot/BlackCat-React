@@ -1,17 +1,19 @@
 import React, { useEffect, useState, useLayoutEffect, useCallback } from "react";
+import scrollIntoView from "smooth-scroll-into-view-if-needed";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { useSelector } from "react-redux";
-import { fancyTimeFormat, scrollTop } from "../asset/data/functions";
-import { tmdAPI } from "../asset/api/path";
-import scrollIntoView from "smooth-scroll-into-view-if-needed";
-import {
-  AlbumPageInfo, PlayListSelector, CarouselItem, 
-  ItemArits, ItemChartList, LoadingSvg,
-} from "../components/main";  
 
-import "./styles/AlbumPage.scss";
+import PlayListSelector from "../components/Selection/PlayListSelector.jsx";
+import ItemChartList from "../components/TopChartPage/ItemChartList.jsx";
+import AlbumPageInfo from "../components/AlbumPages/AlbumPageInfo.jsx";
+import { fancyTimeFormat, scrollTop } from "../assets/functions.js";
+import CarouselItem from "../components/Selection/CarouselItem.jsx";
+import { LoadingSvg } from "../components/loading/LoadingSvg.jsx";
+import ItemArits from "../components/MyMusicPage/ItemArits.jsx";
+import { AlbumPageStyles } from "../assets/styledComponents.js";
+import { tmdAPI } from "../assets/api.js";
 
 const AlbumPage = () => {
    const currentEncodeId = useSelector((state) => state.queueNowPlay.currentEncodeId);
@@ -47,7 +49,7 @@ const AlbumPage = () => {
    const idAlbum = datas?.encodeId;
    let indexItem = -1;
    return (
-      <div className="albumpagestyles mt-[10px]">
+      <AlbumPageStyles className="mt-[10px]">
          <div className="playlist-detail-container">
             <div className="clearfix">
                <AlbumPageInfo datas={datas}></AlbumPageInfo>
@@ -143,7 +145,7 @@ const AlbumPage = () => {
                })}
             </div>
          </div>
-      </div>
+      </AlbumPageStyles>
    )
 }
 

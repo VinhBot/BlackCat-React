@@ -2,8 +2,8 @@ import React, { memo } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setInfoCurrentMv } from "../../features/QueueFeatures/QueueFeatures";
-import { VideoPlayItemsStyles } from "../../asset/styles/styledComponents";
+import { setInfoCurrentMv } from "../../assets/redux/Features/QueueFeatures.js";
+import { VideoPlayItemsStyles } from "../../assets/styledComponents";
 
 
 const VideoPlayItems = memo(({ classGird, data }) => {

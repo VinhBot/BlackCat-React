@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { CommentStyle } from "../../asset/styles/styledComponents";
+import { CommentStyle } from "../../assets/styledComponents";
 
 const MyComment = memo(() => {
    return (

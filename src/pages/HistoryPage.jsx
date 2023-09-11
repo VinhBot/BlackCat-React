@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import React, { useEffect } from "react";
-import { scrollTop } from "../asset/data/functions";
+import { scrollTop } from "../assets/functions.js";
 
 const HistoryPage = () => {
    useEffect(() => {

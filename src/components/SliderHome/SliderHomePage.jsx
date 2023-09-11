@@ -2,8 +2,8 @@ import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import React, { memo, useState, useLayoutEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useGetHomePage } from "../../asset/api/path";
-import { SlideStyle } from "../../asset/styles/styledComponents";
+import { useGetHomePage } from "../../assets/api.js";
+import { SlideStyle } from "../../assets/styledComponents";
 
 const SliderHomePage = memo(() => {
   const [datas, setData] = useState(null);

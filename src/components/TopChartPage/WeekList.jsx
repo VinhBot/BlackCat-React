@@ -1,7 +1,7 @@
 import React, { memo } from "react"
 import { useDispatch } from "react-redux"
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
-import { setPlay, setReady } from "../../features/SettingPlay/settingPlay"
+import { fetchPlayList } from "../../assets/redux/Features/QueueFeatures.js"
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js"
 import ItemChartList from "./ItemChartList"
 
 const WeekList = memo(({ data }) => {

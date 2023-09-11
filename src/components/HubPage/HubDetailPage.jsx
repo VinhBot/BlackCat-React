@@ -8,9 +8,9 @@ import NewReleaseitem from "../NewReleaseitem/NewReleaseitem";
 import MvItem from "../MVpage/MvItem";
 import ItemArits from "../MyMusicPage/ItemArits";
 import axios from "axios"
-import { tmdAPI } from "../../asset/api/path";
+import { tmdAPI } from "../../assets/api.js";
 
-import { HubDetailPageStyles } from "../../asset/styles/styledComponents";
+import { HubDetailPageStyles } from "../../assets/styledComponents";
 
 
 const HubDetailPage = () => {

@@ -2,13 +2,12 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { memo } from "react";
 import { LoadingSkeleton } from "../loading/LoadingSvg"
 import { useDispatch, useSelector } from "react-redux"
-import { fetchPlayList } from "../../features/QueueFeatures/QueueFeatures"
-import { setReady } from "../../features/SettingPlay/settingPlay"
+import { fetchPlayList } from "../../assets/redux/Features/QueueFeatures.js"
 import ActionIcon from "../Icon/ActionIcon"
-import { setPlay } from "../../features/SettingPlay/settingPlay"
-import { pushPlayListsLogged } from "../../features/Logged/loggedFeatures"
-import { useLikeHook } from "../../layout/Hook"
-import { StyleDiv } from "../../asset/styles/styledComponents";
+import { setPlay, setReady } from "../../assets/redux/Features/settingPlayFeatures.js"
+import { pushPlayListsLogged } from "../../assets/redux/Features/loggedFeatures.js"
+import { useLikeHook } from "../layout/Hook"
+import { StyleDiv } from "../../assets/styledComponents";
 
 const CarouselItem = memo(({ hiddenTitle, isHiddenButton = false, isSwiper = false, class1 = "", class2 = "", artis = false, desc = false, item = {}}) => {
       const { title, encodeId, artists, sortDescription, thumbnailM } = item;
