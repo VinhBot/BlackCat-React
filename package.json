@@ -2,13 +2,6 @@
   "name": "blackcat-react",
   "version": "0.1.0",
   "private": true,
-  "description": "Trang web nghe nhạc được viết từ reactjs và api từ zing mp3",
-  "author": "Nguyễn Vinh",
-  "license": "ISC",
-  "keywords": [
-    "ReactJs",
-    "BlackCat-React"
-  ],
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
     "@mui/lab": "^5.0.0-alpha.143",
@@ -44,27 +37,27 @@
     "yup": "^1.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+     "start": "react-scripts start",
+     "build": "react-scripts build",
+     "test": "react-scripts test",
+     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+     "extends": [
+        "react-app",
+        "react-app/jest"
+     ]
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+     "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+     ],
+     "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+     ]
   }
 }
