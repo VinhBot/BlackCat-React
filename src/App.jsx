@@ -8,7 +8,7 @@ import Siderleft from "./components/layout/Siderleft.jsx";
 import BottomPlay from "./components/layout/Bottom.jsx";
 import Header from "./components/layout/Header.jsx";
 import RouterPage from "./router/RouterPage";
-/*===========================================================*/
+
 const App = memo(() => {
    const queueNowPlaySelector = useSelector((state) => state.queueNowPlay);
    const timeSelector = useSelector((state) => state.currentTimes);

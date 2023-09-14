@@ -4,28 +4,21 @@ import ThemePortal from "./Portal/ThemePortal.jsx";
 
 const ItemThemes = () => {
    const [modalOpen, setModalOpen] = useState(false);
-
-   const close = useCallback(() => {
-      setModalOpen(false)
-   }, []);
-   const open = useCallback(() => {
-      setModalOpen(true);
-   }, []);
+   const close = useCallback(() => setModalOpen(false), []);
+   const open = useCallback(() => setModalOpen(true), []);
 
    useEffect(() => {
       const playbar = document.querySelector(".playing-bar");
       const header = document.querySelector(".header");
-
       if(modalOpen) {
          header.style.zIndex = 113;
          playbar.style.zIndex = 112;
       };
-
       return () => {
          header.style.zIndex = null;
          playbar.style.zIndex = null;
-      }
-   }, [modalOpen])
+      };
+   }, [modalOpen]);
 
    return (
       <>
