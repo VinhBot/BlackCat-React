@@ -1,6 +1,8 @@
+// import package
 import React, { memo, useEffect, useLayoutEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
+// Import files
 import { auth, onAuthStateChanged } from "./assets/firebase-config.js";
 import { setPlaying } from "./assets/redux/Features/settingPlayFeatures.js";
 import { setUser } from "./assets/redux/Features/userFeatures.js";

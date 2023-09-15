@@ -1,4 +1,4 @@
-import { getAuth, onAuthStateChanged, updatePassword, updateProfile, signOut, /*onAuthStateChanged,*/ signInWithEmailAndPassword, createUserWithEmailAndPassword,  } from "firebase/auth";
+import { getAuth, onAuthStateChanged, updatePassword, updateProfile, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,  } from "firebase/auth";
 import { getFirestore, doc, getDoc, updateDoc, arrayRemove, arrayUnion, setDoc, serverTimestamp } from "firebase/firestore";
 import { getStorage, ref, uploadBytesResumable, getDownloadURL, deleteObject } from "firebase/storage";
 import { initializeApp } from "firebase/app";
@@ -18,7 +18,7 @@ const auth = getAuth(app);
 export {
   database, auth,
   //============= firebase/auth =======================
-  onAuthStateChanged, updatePassword, updateProfile, signOut, /*onAuthStateChanged,*/ signInWithEmailAndPassword, createUserWithEmailAndPassword,
+  onAuthStateChanged, updatePassword, updateProfile, signOut, signInWithEmailAndPassword, createUserWithEmailAndPassword,
   //============= firebase/firestore ==================
   doc, getDoc, updateDoc, arrayRemove, arrayUnion, setDoc, serverTimestamp,
   //============= firebase/storage ====================
