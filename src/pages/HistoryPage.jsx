@@ -4,7 +4,7 @@ import { scrollTop } from "../assets/functions.js";
 
 const HistoryPage = () => {
    useEffect(() => {
-      scrollTop()
+      scrollTop();
    }, []);
    const project = [
      { name: "Bài Hát", path: "/history/song" },
@@ -16,9 +16,9 @@ const HistoryPage = () => {
          <div className="main_mv-header mb-[30px]">
             <h3>Phát Gần Đây</h3>
             <nav className="main_mv-header_navbar">
-              {project.map(({ name, path }, index) => (
-                 <NavLink key={index} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={path}>
-                   {name}
+              {project.map((i, index) => (
+                 <NavLink key={index} className={({ isActive }) => (isActive ? "main_mv-header-item active" : "main_mv-header-item")} to={i.path}>
+                   {i.name}
                  </NavLink>
               ))}
             </nav>
