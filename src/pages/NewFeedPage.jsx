@@ -17,7 +17,7 @@ const NewFeedPage = () => {
               {project.map(({ name, nations, path }, index) => (
                 <li key={index} className={`zm-navbar-item ${nation === nations ? "is-active" : ""}  `}>
                   <div className="navbar-link">
-                     <Link to={path} className="">{name}</Link>
+                     <Link to={path}>{name}</Link>
                   </div>
                 </li>
               ))}

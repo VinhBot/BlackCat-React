@@ -8,24 +8,22 @@ import App from "./App.jsx";
 import "./assets/styles.js";
 
 const queryClient = new QueryClient({
-   defaultOptions: {
-      queries: {
-         refetchOnWindowFocus: false,
-         retry: 3,
-      },
-   },
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 3,
+    },
+  },
 });
 // reactDom
-const root = ReactDOM.createRoot(document.getElementById("root"));
-// render 
-root.render(
-   <Provider store={store}>
-      <QueryClientProvider client={queryClient}>
-         <BrowserRouter>
-            <App />
-         </BrowserRouter>
-      </QueryClientProvider>
-   </Provider>
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </Provider>
 );
 
 // node node_modules/react-scripts/bin/react-scripts start

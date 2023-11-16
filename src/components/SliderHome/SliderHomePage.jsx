@@ -1,4 +1,4 @@
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
+import { Navigation, Autoplay, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import React, { memo, useState, useLayoutEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -17,25 +17,25 @@ const SliderHomePage = memo(() => {
   }, [status]);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
-  try {
-    return (
-      <SlideStyle>
-        <div className="gallery mr-[-15px] ml-[-15px]">
+  return (
+    <SlideStyle>
+      <div className="gallery mr-[-15px] ml-[-15px]">
           <div className="gallery-container slider_list min-h-[160px]">
             <Swiper
-              modules={[Navigation, Autoplay, Pagination]}
+              modules={[Navigation, Autoplay, Pagination, Scrollbar, A11y]}
               height={216} 
-              loop={true} // tạp vòng lặp
+              speed={600}
+              loop={true} // tạo vòng lặp
               autoplay={{ delay: 3500, disableOnInteraction: false }} // tự động chuyển đổi hình ảnh
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: false }}
+              // scrollbar={{ draggable: false }}
               allowTouchMove={false}
               loopfillgroupwithblank={"true"}
-              speed={600}
+              /*
               navigation={{
                 prevEl: navigationPrevRef.current,
                 nextEl: navigationNextRef.current,
               }}
+              */
               onBeforeInit={(swiper) => {
                 swiper.params.navigation.prevEl = navigationPrevRef.current
                 swiper.params.navigation.nextEl = navigationNextRef.current
@@ -67,11 +67,12 @@ const SliderHomePage = memo(() => {
                   <span className="material-icons-outlined">arrow_forward_ios</span>
                 </button>
               </>
+
               {datas && datas.length > 0 && datas.map((e, index) => {
                 return (
                   <SwiperSlide key={e.banner}>
                     <div className="gallery-item">
-                      <div className="zm-card  cursor-pointer">
+                      <div className="zm-card cursor-pointer">
                         <div className="zm-card-image">
                           <LazyLoadImage height={"auto"} src={e.banner} alt="" />
                         </div>
@@ -80,6 +81,7 @@ const SliderHomePage = memo(() => {
                   </SwiperSlide>
                 );
               })}
+
               {(!datas || status === "loading") && Array(3).fill(0).map((e, index) => {
                 return (
                   <SwiperSlide key={index}>
@@ -96,11 +98,8 @@ const SliderHomePage = memo(() => {
             </Swiper>
           </div>
         </div>
-      </SlideStyle>
-    );
-  } catch (error) {
-    console.log(error)
-  };
+    </SlideStyle>
+  );
 });
 
 export default SliderHomePage;

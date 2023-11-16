@@ -29,28 +29,30 @@
 }
 
 @media (min-width: 720px) and (max-width: 1023px) {
-  .header {
-    right: 0;
-  }
-
-  .header .header_content .header_content-left form {
-    margin-left: 14px;
-  }
-
-  .header .header_content .header_content-left .header_btn-back {
-    margin-right: 4px;
-    span {
-      font-size: 2.2rem;
-    }
-  }
-
-  .header .header_content .header_content-left .header_btn-next {
-    margin-left: 4px;
-    span {
-      font-size: 2.2rem;
-    }
+	.header {
+		right: 0;
+		.header_content {
+			.header_content-left {
+				form {
+					margin-left: 14px;
+				}
+				.header_btn-back {
+					margin-right: 4px;
+					span { 
+            font-size: 2.2rem;
+			 	  }
+			  }
+        .header_btn-next {
+          margin-left: 4px;
+          span {
+            font-size: 2.2rem;
+          }
+        }
+		  }
+	  }
   }
 }
+
 
 @media (min-width: 1112px) {
   .main-page .main_topchart-week .zing-chart_list .zing-chart_item .zing-chart_item-left .zing-chart_item-oder {

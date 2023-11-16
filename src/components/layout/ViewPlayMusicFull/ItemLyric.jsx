@@ -1,13 +1,12 @@
-import React, { memo, useRef } from "react"
-import { useCallback } from "react"
+import React, { memo, useRef, useCallback } from "react";
 import { useSelector } from "react-redux"
 import smoothScrollIntoView from "smooth-scroll-into-view-if-needed"
 import { formatTime } from "../../../assets/functions.js";
 
 const ItemLyric = memo(({ data, index }) => {
-   const current = useSelector((state) => state.queueNowPlay.currentTime)
-   const currentTime = formatTime(current)
-   const liRef = useRef(null)
+   const current = useSelector((state) => state.queueNowPlay.currentTime);
+   const currentTime = formatTime(current);
+   const liRef = useRef(null);
 
    const scrollActive = useCallback(() => {
       setTimeout(() => {

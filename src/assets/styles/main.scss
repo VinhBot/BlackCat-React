@@ -26,21 +26,21 @@
       left: 0;
       top: 0;
       animation: animloader 2s linear infinite;
+      // 
+      @keyframes animloader {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
     }
     &::after {
       animation-delay: 1s;
     }
-  }
-}
-
-@keyframes animloader {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
   }
 }
 /*
@@ -79,7 +79,6 @@
 .sider_active {
   background-color: var(--alpha-bg) !important;
   border-left: 3px solid var(--purple-primary) !important;
-
   padding-left: 4px !important;
 }
 
@@ -100,29 +99,26 @@
 }
 
 .player_btn {
-  position: relative;
-  cursor: pointer;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: .2s ease-in;
-  position: relative;
-}
-
-.player_btn:hover {
-  background-color: var(--hover-tooltip-opacity);
-}
-
-
-
-.player_btn:hover .playing_title-hover {
-  visibility: visible;
-}
-
-.player_btn span:first-child {
-  font-size: 1.6rem;
-  padding: 1rem;
+	position: relative;
+	cursor: pointer;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: .2s ease-in;
+	position: relative;
+	&:hover {
+		background-color: var(--hover-tooltip-opacity);
+		.playing_title-hover {
+			visibility: visible;
+		}
+	}
+	span {
+		&:first-child {
+			font-size: 1.6rem;
+			padding: 1rem;
+		}
+	}
 }
 
 .playing_title-hover {
@@ -140,19 +136,17 @@
   z-index: 1;
   top: -95%;
   left: -42px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--black) transparent transparent transparent;
+  }
 }
-
-.playing_title-hover::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: var(--black) transparent transparent transparent;
-}
-
 // thẻ Title item
 .main_title-text {
   display: block;
@@ -163,19 +157,16 @@
   transition: .1s;
   margin-bottom: 4px;
   cursor: pointer;
-
   display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   height: auto;
   overflow: hidden;
+  &:hover {
+    color: var(--link-text-hover);
+  }
 }
-
-.main_title-text:hover {
-  color: var(--link-text-hover);
-}
-
 // Thẻ Hover item opacity + btn
 .recently_list-item_hover {
   position: absolute;
@@ -190,18 +181,14 @@
   background-color: rgba(0, 0, 0, .4);
   display: none;
   z-index: 99;
-
-
   .recently_btn-hover-play {
     cursor: pointer;
     margin: 0 .6rem;
     transition: .2s;
-
     &:hover span ion-icon {
       transition: .2s;
       opacity: .8;
     }
-
     span {
       display: flex;
       justify-content: center;
@@ -209,30 +196,23 @@
       font-size: 5rem;
       padding: 2px;
     }
-
     // <ion-icon name="play-circle-outline"></ion-icon>
-
   }
 }
-
-
 // Thẻ Tiêu đề Main Page
 .container_title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1.6rem;
-
   p {
     font-size: 2rem;
     font-weight: 700;
   }
 }
 
-
 // Main
 // Thẻ item img playlist
-
 .main-page_list-item {
   display: flex;
   align-items: flex-start;
@@ -247,7 +227,6 @@
   position: relative;
   line-height: 0;
   transition: border-radius 2s ease-out;
-
   img {
     border-radius: 6px;
     transform: scale(1);
@@ -262,7 +241,6 @@
     img {
       transform: scale(1.08) !important;
     }
-
     .recently_list-item_hover {
       transition: .2s !important;
       display: flex !important;
@@ -406,11 +384,11 @@ figure {
 
 .my-masonry-grid_column {
   padding-left: 20px;
-  /* gutter size */
+  /* kích thước máng xối */
   background-clip: padding-box;
 }
 
-/* Style your items */
+/* Tạo kiểu cho các món đồ của bạn */
 .my-masonry-grid_column>div {
   /* thay đổi div để tham chiếu các phần tử của bạn mà bạn đã đặt vào <Masonry> */
   margin-bottom: 20px;
@@ -419,15 +397,15 @@ figure {
 @media (max-width: 800px) {
   .my-masonry-grid {
     margin-left: -15px;
-    /* gutter size offset */
+    /* bù đắp kích thước máng xối */
   }
   .my-masonry-grid_column {
     padding-left: 15px;
-    /* gutter size offset */
+    /* bù đắp kích thước máng xối */
   }
   .my-masonry-grid_column>div {
     margin-bottom: 15px;
-    /* space between items */
+    /* khoảng cách giữa các mục */
   }
 }
 
@@ -602,14 +580,14 @@ a.active, a:hover {
 
 .transition-content {
   animation: news 10s infinite linear;
-}
-
-@keyframes news {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-95%);
+  
+  @keyframes news {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-95%);
+    }
   }
 }
 

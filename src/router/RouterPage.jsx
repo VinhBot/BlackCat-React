@@ -1,46 +1,46 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import React, { memo, useEffect, useRef } from "react";
-// Components
-import Loading from "../components/loading/Loading";
-// 
-const MyInfoPage = React.lazy(() => import('../components/MyMusicPage/MyInfoPage'));
-const HistorySong = React.lazy(() => import('../components/HistoryPage/HistorySong'));
-const HistoryVideo = React.lazy(() => import('../components/HistoryPage/HistoryVideo'));
-const HistroryPlayList = React.lazy(() => import('../components/HistoryPage/HistroryPlayList'));
+// Components 
+const NewFeedPageChidlen = React.lazy(() => import('../components/Followpage/NewFeedPageChidlen'));
 const SearchPagePlaylist = React.lazy(() => import('../components/SearchPage/SearchPagePlaylist'));
-const SearchPageSong = React.lazy(() => import('../components/SearchPage/SearchPageSong'));
-const SearchPageMv = React.lazy(() => import('../components/SearchPage/SearchPageMv'));
+const HistroryPlayList = React.lazy(() => import('../components/HistoryPage/HistroryPlayList'));
 const SearchPageArtist = React.lazy(() => import('../components/SearchPage/SearchPageArtist'));
+const MyMusicPlayList = React.lazy(() => import('../components/MyMusicPage/MyMusicPlayList'));
+const SearchPageSong = React.lazy(() => import('../components/SearchPage/SearchPageSong'));
 const SearchPageAll = React.lazy(() => import('../components/SearchPage/SearchPageAll'));
-const HubDetailPage = React.lazy(() => import('../components/HubPage/HubDetailPage'));
+const MyMusicArtis = React.lazy(() => import('../components/MyMusicPage/MyMusicArtis'));
+const HistoryVideo = React.lazy(() => import('../components/HistoryPage/HistoryVideo'));
+const SearchPageMv = React.lazy(() => import('../components/SearchPage/SearchPageMv'));
 const ArtistSingle = React.lazy(() => import('../components/ArtistPage/ArtistSingle'));
-const ArtistMv = React.lazy(() => import('../components/ArtistPage/ArtistMv'));
+const MyMusicSong = React.lazy(() => import('../components/MyMusicPage/MyMusicSong'));
+const HistorySong = React.lazy(() => import('../components/HistoryPage/HistorySong'));
+const HubDetailPage = React.lazy(() => import('../components/HubPage/HubDetailPage'));
 const ArtistAlbum = React.lazy(() => import('../components/ArtistPage/ArtistAlbum'));
+const MyMusicAll = React.lazy(() => import('../components/MyMusicPage/MyMusicAll'));
+const MyInfoPage = React.lazy(() => import('../components/MyMusicPage/MyInfoPage'));
 const ArtistSong = React.lazy(() => import('../components/ArtistPage/ArtistSong'));
 const ArtistALl = React.lazy(() => import('../components/ArtistPage/ArtistALl'));
-const MyMusicArtis = React.lazy(() => import('../components/MyMusicPage/MyMusicArtis'));
-const MyMusicPlayList = React.lazy(() => import('../components/MyMusicPage/MyMusicPlayList'));
-const MyMusicSong = React.lazy(() => import('../components/MyMusicPage/MyMusicSong'));
-const MyMusicAll = React.lazy(() => import('../components/MyMusicPage/MyMusicAll'));
-const NewFeedPageChidlen = React.lazy(() => import('../components/Followpage/NewFeedPageChidlen'));
 const MvPageList = React.lazy(() => import('../components/MVpage/MvPageList'));
+const ArtistMv = React.lazy(() => import('../components/ArtistPage/ArtistMv'));
+import Loading from "../components/loading/Loading";
 // pages
 const AuthenticationPage = React.lazy(() => import('../pages/AuthenticationPage'));
-const NewMusicPage = React.lazy(() => import('../pages/NewMusicPage'));
-const VideoPopUp = React.lazy(() => import('../pages/VideoPopUp'));
-const HistoryPage = React.lazy(() => import('../pages/HistoryPage'));
 const ZingChartPage = React.lazy(() => import('../pages/ZingChartPage'));
-const Top100Page = React.lazy(() => import('../pages/Top100Page'));
-const SearchPage = React.lazy(() => import('../pages/SearchPage'));
-const RadioPage = React.lazy(() => import('../pages/RadioPage'));
-const NotFound = React.lazy(() => import('../pages/NotFound'));
+const NewMusicPage = React.lazy(() => import('../pages/NewMusicPage'));
 const NewFeedPage = React.lazy(() => import('../pages/NewFeedPage'));
 const MyMusicPage = React.lazy(() => import('../pages/MyMusicPage'));
-const MvPage = React.lazy(() => import('../pages/MvPage'));
-const HubPage = React.lazy(() => import('../pages/HubPage'));
-const HomePage = React.lazy(() => import('../pages/HomePage'));
-const AlbumPage = React.lazy(() => import('../pages/AlbumPage'));
+const HistoryPage = React.lazy(() => import('../pages/HistoryPage'));
 const ArtistPage = React.lazy(() => import('../pages/ArtistPage'));
+const VideoPopUp = React.lazy(() => import('../pages/VideoPopUp'));
+const Top100Page = React.lazy(() => import('../pages/Top100Page'));
+const SearchPage = React.lazy(() => import('../pages/SearchPage'));
+const AlbumPage = React.lazy(() => import('../pages/AlbumPage'));
+const RadioPage = React.lazy(() => import('../pages/RadioPage'));
+const HomePage = React.lazy(() => import('../pages/HomePage'));
+const NotFound = React.lazy(() => import('../pages/NotFound'));
+const HubPage = React.lazy(() => import('../pages/HubPage'));
+const MvPage = React.lazy(() => import('../pages/MvPage'));
+
 const Profile = React.lazy(() => import('../pages/Profile'));
 // render
 const RouterPage = memo(() => {

@@ -24,10 +24,12 @@ const SignInForm = memo(({ setSign }) => {
      })), 
      mode: "onChange"
    });
+
    useEffect(() => {
       setFocus("email");
    }, [setFocus]);
-   const onSubmitLogin = (data) => {
+
+   const login = handleSubmit((data) => {
       signInWithEmailAndPassword(auth, data.email, data.password).then((userCredential) => {
         setTimeout(() => reset({ 
           email: "",
@@ -43,8 +45,7 @@ const SignInForm = memo(({ setSign }) => {
           type: "success",
         });
         setTimeout(() => navigate("/"), 700);
-      }).catch((error) => {
-        console.log(error);
+      }).catch((e) => {
         toast("Đăng Nhập không thành công, Tài Khoản hoặc Mật Khẩu không chính xác 🥲", {
           type: "error",
         });
@@ -52,22 +53,23 @@ const SignInForm = memo(({ setSign }) => {
           password: ""
         }), 1000);
       });
-   };
+   });
+
    return (
       <div>
-         <form onSubmit={handleSubmit(onSubmitLogin)} name="loginForm" className="loginForm w-full">
+         <form onSubmit={login} name="loginForm" className="loginForm w-full">
             {/* Tài Khoản */}
             <div className="form-group">
                <input {...register("email")} type="email" className="form-control email" name="email" placeholder="Email " />
             </div>
-            <div className="mt-[6px]  px-[1rem] text-red-500">{errors?.email?.message}</div>
+            <div style={{ paddingLeft: "1rem", marginTop: "0.375rem", color: "red" }}>{errors?.email?.message}</div>
            {/* Mật Khẩu */}
             <div className="form-group">
                <input {...register("password")} type="password" className="form-control password" name="password" placeholder="Password" />
                <span className="fa fa-eye-slash pwd-toggle" />
             </div>
             <div className="mt-[6px]  px-[1rem] text-red-500">{errors?.password?.message}</div>
-            <button className="btn-login " type="submit">
+            <button className="btn-login" type="submit">
                Đăng Nhập
             </button>
          </form>
@@ -95,11 +97,10 @@ const SignUpForm = ({ setSign }) => {
      })),
      mode: "onChange",
    });
-   const onSubmit = async(data) => {
+
+   const onSubmit = handleSubmit(async(data) => {
       createUserWithEmailAndPassword(auth, data.email, data.password).then(async(userCredential) => {
-        updateProfile(auth.currentUser, {
-          displayName: data.name,
-        });
+        updateProfile(auth.currentUser, { displayName: data.name }); 
         await setDoc(doc(database, "users", userCredential.user.uid), {
           email: data.email,
           password: data.password,
@@ -116,6 +117,7 @@ const SignUpForm = ({ setSign }) => {
           email: userCredential.user.email,
           uid: userCredential.user.uid,
         }));
+        // reset lại form khi nhập xong các giá trị 
         setTimeout(() => {
           reset({ 
             email: "",
@@ -124,6 +126,7 @@ const SignUpForm = ({ setSign }) => {
             name: ""
           });
         }, 1000);
+         
         toast("Đăng ký Thành Công", {
           type: "success",
         });
@@ -134,14 +137,15 @@ const SignUpForm = ({ setSign }) => {
           type: "error",
         });
       });
-   };
+   }); 
+
    useEffect(() => {
       setFocus("email");
    }, [setFocus]);
 
    return (
       <div>
-         <form onSubmit={handleSubmit(onSubmit)} name="loginForm" className="loginForm w-full">
+         <form onSubmit={onSubmit} name="loginForm" className="loginForm w-full">
             <div className="form-group">
                <input {...register("email")} type="email" className="form-control email" name="email" placeholder="Email " />
             </div>
@@ -160,10 +164,10 @@ const SignUpForm = ({ setSign }) => {
             <div className="mt-[6px]  px-[1rem] text-red-500">{errors?.passwordCheck?.message}</div>
 
             <div className="form-group">
-               <input {...register("name")} type="text" className="form-control " name="name" placeholder="Tên hiển thị" />
+               <input {...register("name")} type="text" className="form-control" name="name" placeholder="Tên hiển thị" />
                <span className="fa fa-eye-slash pwd-toggle" />
             </div>
-            <div className="mt-[6px]  px-[1rem] text-red-500">{errors?.name?.message}</div>
+            <div className="mt-[6px] px-[1rem] text-red-500" >{errors?.name?.message}</div>
 
             <button disabled={isSubmitting} className="btn-login " type="submit">
                {isSubmitting ? "Loading..." : "Đăng Ký"}
@@ -192,7 +196,7 @@ const AuthenticationPage = () => {
             <div className="flex w-full h-[100vh] items-center justify-center">
                <div className=" mb-[5rem] l-8 m-10 c-12">
                   <div className="row !flex-wrap authForm">
-                     <div className="col l-5 m-5 c-12   left flex items-center justify-center ">
+                     <div className="col l-5 m-5 c-12 left flex items-center justify-center ">
                         <div className="sider">
                            <div className="sider_brand-item">
                               <div className="sider_brand-item-img">
@@ -208,7 +212,7 @@ const AuthenticationPage = () => {
                         <div className="flex flex-col justify-start items-center gap-[16px]">
                            <button onClick={clickerErr} className="btnAuth bg-[#3b5998]">Tiếp tục với Facebook</button>
                         </div>
-                       
+
                      </div>
                      <div className="col l-7 m-7 c-12 right">
                         <div className="flex  items-baseline justify-center ">

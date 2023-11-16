@@ -158,7 +158,18 @@ const EventHomePage = memo(() => {
   // thêm các nút cho thanh sự kiện
   const responseButton = () => {
       return (
-          <div className="absolute mt-2 top-0 event-btn-arrow flex justify-center items-center gap-[10px]">
+          <div 
+            // className="event-btn-arrow"
+            style={{
+              position: "absolute",
+              marginTop: "0.5rem",
+              top: "0px",
+              flex: "none",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "0.625rem"
+            }}
+          >
               {/** trước */}
               <button ref={navigationPrevRef} type="button" className="cursor-pointer">
                  <span className="material-icons-outlined">
@@ -181,7 +192,7 @@ const EventHomePage = memo(() => {
           {project && project.length > 0 && (
                <Swiper
                   modules={[Navigation, Pagination]}
-                  loop={false}
+                  loop={true}
                   slidesPerView={3}
                   pagination={{ dynamicBullets: true }}
                   navigation={{

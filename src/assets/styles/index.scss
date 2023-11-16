@@ -17,15 +17,14 @@ html {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
   overscroll-behavior: smooth;
-}
-
-body {
-  color: var(--text-primary);
-  line-height: 1.5;
-  font-size: 1.4rem;
-  font-weight: 400;
-  overscroll-behavior: smooth;
-  overflow: hidden;
+  body {
+    color: var(--text-primary);
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-weight: 400;
+    overscroll-behavior: smooth;
+    overflow: hidden;
+  }
 }
 
 input[type="search"]::-webkit-search-decoration,
@@ -39,7 +38,6 @@ input[type="search"]::-webkit-search-results-decoration {
   transition: all .3s linear;
 }
 
-
 .overflow-y-auto::-webkit-scrollbar {
   width: 5px;
 }
@@ -52,9 +50,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .overflow-y-auto::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: var(--scroll-thumb-bg);
-
 }
-
 
 .main-page::-webkit-scrollbar {
   width: 5px;
@@ -68,9 +64,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .main-page::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: var(--scroll-thumb-bg);
-
 }
-
 
 a {
   text-decoration: none;

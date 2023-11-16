@@ -8,7 +8,7 @@ const NotFound = memo(() => {
           <p style={{ color: "red" }}>HomePage</p>
         </Link>
       </center>
-   )
+   );
 });
 
-export default NotFound
+export default NotFound;

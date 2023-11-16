@@ -20,8 +20,8 @@ const FollowItems = memo(({ data }) => {
    const handleClick = () => show();
 
    return (
-      <div className="col  !mb-[15px]">
-         <ItemStyles className="zm-card feed-card  col ">
+      <div className="col !mb-[15px]">
+         <ItemStyles className="zm-card feed-card col ">
             <div className="feed-header mb-[10px]">
                <div className="media flex items-center justify-start">
                   <div className="media-left mr-[10px] ">
@@ -78,4 +78,4 @@ const FollowItems = memo(({ data }) => {
    );
 });
 
-export default FollowItems
+export default FollowItems;
