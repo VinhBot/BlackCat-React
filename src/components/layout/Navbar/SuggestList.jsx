@@ -85,11 +85,9 @@ const SuggestList = memo(({ setOpen, setValue, value, refinput }) => {
             {entitiesNew && !loading && refinput.current.value && refinput.current.value.length > 0 && (
                <>
                   <div className="search__title  !pt-[10px] ">Gợi ý kết quả</div>
-                  {entitiesNew[1]?.suggestions?.map((e, index) => {
-                     if (index > 5) return
-
-                     return <OutstandingItems setOpen={setOpen} isSearch key={index} data={e}></OutstandingItems>
-                  })}
+                  {entitiesNew[1]?.suggestions?.slice(0, 6).map((suggestion, index) => (
+                     <OutstandingItems key={index} setOpen={setOpen} isSearch data={suggestion} />
+                  ))}
                </>
             )}
          </div>

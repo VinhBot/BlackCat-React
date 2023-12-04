@@ -1,5 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import React, { memo, useEffect, useRef } from "react";
+import Loading from "../components/loading/Loading";
 // Components 
 const NewFeedPageChidlen = React.lazy(() => import('../components/Followpage/NewFeedPageChidlen'));
 const SearchPagePlaylist = React.lazy(() => import('../components/SearchPage/SearchPagePlaylist'));
@@ -22,7 +23,6 @@ const ArtistSong = React.lazy(() => import('../components/ArtistPage/ArtistSong'
 const ArtistALl = React.lazy(() => import('../components/ArtistPage/ArtistALl'));
 const MvPageList = React.lazy(() => import('../components/MVpage/MvPageList'));
 const ArtistMv = React.lazy(() => import('../components/ArtistPage/ArtistMv'));
-import Loading from "../components/loading/Loading";
 // pages
 const AuthenticationPage = React.lazy(() => import('../pages/AuthenticationPage'));
 const ZingChartPage = React.lazy(() => import('../pages/ZingChartPage'));
@@ -39,9 +39,8 @@ const RadioPage = React.lazy(() => import('../pages/RadioPage'));
 const HomePage = React.lazy(() => import('../pages/HomePage'));
 const NotFound = React.lazy(() => import('../pages/NotFound'));
 const HubPage = React.lazy(() => import('../pages/HubPage'));
-const MvPage = React.lazy(() => import('../pages/MvPage'));
-
 const Profile = React.lazy(() => import('../pages/Profile'));
+const MvPage = React.lazy(() => import('../pages/MvPage'));
 // render
 const RouterPage = memo(() => {
    const mainPageRef = useRef();

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Tippy from "@tippyjs/react";
 
 import { SettingPortalStyles, SettingPortalChildrenStylle } from "../../../../assets/styledComponents";
@@ -37,7 +38,6 @@ const SettingPortal = () => {
    const project = [
       { name: "Giới thiệu", icons: "icon ic-20-info", path: "/profile" },
       { name: "Facebook", icons: "icon ic-20-Report", path: "https://www.facebook.com/blackcat.288203/?locale=vi_VN" },
-      { name: "Liên hệ", icons: "icon ic-20-Call", path: "https://mp3.zing.vn/huong-dan/contact" },
       // { name: "", icons: "", path: "" },
    ];
    return (
@@ -57,10 +57,10 @@ const SettingPortal = () => {
             <ul className="menu-list zm-nav-footer">
                {project.map(({ name, icons, path }, index) => (
                   <li key={index}>
-                     <a target="_blank" href={path} className="z-link zm-btn" title={name} rel="noreferrer">
+                     <Link to={path} className="z-link zm-btn">
                         <i className={icons} />
                         <div>{name}</div>
-                     </a>
+                     </Link>
                   </li>
                ))}
             </ul>
