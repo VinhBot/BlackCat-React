@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
-const tmdbEndpoint = "https://api-zingmp3.vercel.app/api";
+const tmdbEndpoint = "https://blackcat-api.vercel.app/api";
 export const tmdAPI = {
    //  getMovieDetails: (movieId) => `${tmdbEndpoint}/${movieId}?api_ey=${apiKey}`,
    getHomePage: () => `${tmdbEndpoint}/home`,
